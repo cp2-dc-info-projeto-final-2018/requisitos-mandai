@@ -11,8 +11,8 @@
  
  Fluxo principal:
 	
-	1. O Aluno Cp2 e o Usuário Normal deverão acessar a janela de upload de conteúdos e solicitar a permissão do mesmo para o
-professor.	
+	1. O Aluno Cp2 e o Usuário Normal deverão acessar a janela de upload de conteúdos e solicitar a permissão 
+	do mesmo para o professor.	
 
 
 # CDU 02 - Upload de Conteúdo
