@@ -27,4 +27,19 @@ Fluxo principal:
 	2. O professor autentica sua identidade.
 	3. O admnistrador aprova o cadastro do professor.
 	4. O professor faz o upload do conteúdo.
+	
+# CDU 03 - Gerenciar Conteúdo
 
+# CDU 04 - Cadastrar
+
+# CDU 05 - Autenticar
+
+# CDU 06 - Acesso a conteúdo total
+
+# CDU 07 - Visualizar notificações
+
+# CDU 08 - Upload de Conteúdo
+
+# CDU 09 - Solicitação de Cadastro
+
+# CDU 10 - Aprovação de Cadastro
