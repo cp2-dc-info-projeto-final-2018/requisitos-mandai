@@ -11,7 +11,13 @@
  
  Fluxo principal:
 	
-	1. O usuário deverá acessar a janela de solicitação de conteúdos e encaminhar o material desejado para o professor e o mesmo irá decidir se fará ou não upload do material.	
+	1. O usuário deverá acessar a janela de solicitação de conteúdos.
+    2. O usuário irá selecionar a matéria desejada.
+	3. O usuário irá adcionar título e subtítulo.
+	4. O usuário irá fazer upload do material desejado.
+	5. O professor irá acessar o material solicitado.
+	6. O professor irá aprovar/reprovar o material solicitado.
+
 
 
 # CDU 02 - Upload de Conteúdo
