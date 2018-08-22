@@ -11,7 +11,6 @@
  
  Fluxo principal:
 	
-    2. O aluno irá selecionar a matéria desejada.
 	1. O Aluno Cp2 e o Usuário Normal deverão acessar a janela de solicitação de conteúdos e encaminhar
 	o material desejado para o professor e o mesmo irá decidir se fará ou não upload do material.	
 
