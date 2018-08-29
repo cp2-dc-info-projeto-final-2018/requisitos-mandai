@@ -1,15 +1,3 @@
-CREATE TABLE CADASTRO (
-Cod_cadastro INT PRIMARY KEY NOT NULL, 
-Nome VARCHAR (50),
-Sobrenome VARCHAR (50),
-Senha VARCHAR (20),
-Email VARCHAR (50),
-CPF VARCHAR (11),
-Escola VARCHAR (50),
-Cidade VARCHAR (50),
-Estado VARCHAR (50)
-);
-
 CREATE TABLE  ALUNOCP2 (
 Cod_aluno INT PRIMARY KEY NOT NULL,
 Nome VARCHAR (50), 
@@ -36,4 +24,18 @@ Nivelamento VARCHAR (10),
 Comentarios VARCHAR (500),
 Avaliacao INT NOT NULL,
 Especificar_materia VARCHAR (30), 
+);
+
+CREATE TABLE DISCIPLINA (
+Cod_disciplina INT PRIMARY KEY NOT NULL,
+Nome VARCHAR (50)
+);
+
+CREATE TABLE AVALIACAO (
+Cod_avaliacao INT PRIMARY KEY NOT NULL
+);
+
+CREATE TABLE COMENTARIO (
+Cod_comentario INT PRIMARY KEY NOT NULL,
+Caracteres VARCHAR (500)
 );
