@@ -25,7 +25,7 @@ background-attachment: fixed;
 
 background-color: #cbdce2;
 	width: auto;
-	height: 2000px;
+	height: 1400px;
 	margin: 70px;
 	}
 
@@ -49,12 +49,45 @@ background-color: #cbdce2;
 
 }
 
-	#menu ul li a:hover { 		/*		*/
+	#menu ul li a:hover {
 	background-color: rgb(130, 154, 255);
 	color: white;
 	border-bottom: 3px solid  rgb(130, 154, 255);
 	}
 
+#cadastro {
+	margin-left: 850px;
+}
+
+#rodape {
+	background: linear-gradient(#4169E1, #4682B4);
+	width: auto;
+	height: 150px;
+}
+
+#textorodape {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+#logo {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 150px;
+	height: 150px;
+	left: 43%;
+}
+
+.feed {
+
+width: 300px;
+height: 300px;
+margin: 80px;
+
+}
 
 </style>
 
@@ -65,42 +98,42 @@ background-color: #cbdce2;
 
 <body background="fundo.jpg">
 
-	<div id="topo">
-	</div>
-</div>
-<div id="tracado">
+<div id="topo">
+	<img src="logo.png" id="logo"> </img>
 </div>
 
+<div id="tracado">
+</div>
 
 <nav id="menu">
 	<ul>
 		<li><a href="#">Principal</a></li>
 		<li><a href="#">Matérias</a></li>
-		<li><a href="#">Sobre o Projeto</a></li>
+		<li><a href="#">Videos-Aulas</a></li>
 		<li><a href="#">Quem somos</a></li>
 		<li><a href="#">Fale Conosco</a></li>
+		<li id="cadastro"><a href="#">Entrar</a></li>
+		<li><a href="#">Cadastrar</a></li>
 	</ul>
 </nav>
 
 <div id="principal">
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
 </div>
 
-
-
-
-
-
-
- <center></center>
+<footer id="rodape">
+	<p id="textorodape"> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...<article> </p>
+</footer>
 
 </body>
-
-
-
-
-
-
-
 
 
 </html>
