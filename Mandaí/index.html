@@ -3,72 +3,92 @@
 
 <style>
 	body {
-	background: white;
+background-attachment: fixed;
+
 	}
-	
+
 	#topo {
 	background-color: black;
 	width: full;
-	height: 200px;  
-	background: linear-gradient(#4169E1, #4682B4);  
+	height: 200px;
+	background: linear-gradient(#4169E1, #4682B4);
 	  }
-	  
+
 	  #tracado {
-	background-color: black;
+	background-color: white;
 	width: full;
-	height: 5px;       
-	  
+	height: 5px;
+
 	  }
 
 	#principal {
-	
-background-color: #ADD8E6;
+
+background-color: #cbdce2;
 	width: auto;
-	height: 2000px;
+	height: 1400px;
 	margin: 70px;
 	}
-	 
-	 #menuprincipal {
-	background-color: black;
-	width: auto;
-	height: 45px;
-	margin: 30px;
-	}
-	
-#divBusca{
-  background-color:#E0EEEE;
-  border:solid 2px #5F9EA0;
-  border-radius:10px;
-  width:300px;
-  height:32px;
-}
- 
-#txtBusca{
-  float:left;
-  background-color:transparent;
-  padding-left:5px; 
-  font-size:18px;
-  border:none;
-  height:32px;
-  width:191px;
-}
- 
-#btnBusca{
-  border:none;
-  float:right;
-  height:32px;
-  border-radius:0 7px 7px 0;
-  width:70px;
-  font-weight:bold;
-  background:#5F9EA0;
-}
- 
-#divBusca img{
-  float:right;
-}
-	
 
-	 
+	#menu ul {		/*Personalização do Menu*/
+		list-style-type: none;
+	     margin: 0;
+	     padding: 0;
+	     overflow: hidden;
+	     background: linear-gradient(#4169E1, #4682B4);
+	}
+
+	#menu li {
+	float: left /*Colocar o menu na Horizontal*/
+	}
+	#menu li a {
+		display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+
+}
+
+	#menu ul li a:hover {
+	background-color: rgb(130, 154, 255);
+	color: white;
+	border-bottom: 3px solid  rgb(130, 154, 255);
+	}
+
+#cadastro {
+	margin-left: 850px;
+}
+
+#rodape {
+	background: linear-gradient(#4169E1, #4682B4);
+	width: auto;
+	height: 150px;
+}
+
+#textorodape {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+#logo {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 150px;
+	height: 150px;
+	left: 43%;
+}
+
+.feed {
+
+width: 300px;
+height: 300px;
+margin: 80px;
+
+}
+
 </style>
 
 
@@ -76,40 +96,44 @@ background-color: #ADD8E6;
   <title>Acervo Mandaí</title>
 </head>
 
-<body> 
+<body background="fundo.jpg">
 
 <div id="topo">
-	<div id="divBusca">
-	<img src="buscar.png" alt="Buscar"/>
-   <input type="text" id="txtBusca" placeholder="Buscar"/>
-  <button id="btnBusca">Buscar</button>
-	</div>
-</div> 
+	<img src="logo.png" id="logo"> </img>
+</div>
+
 <div id="tracado">
 </div>
- 
 
- <div id="menuprincipal">
+<nav id="menu">
+	<ul>
+		<li><a href="#">Principal</a></li>
+		<li><a href="#">Matérias</a></li>
+		<li><a href="#">Videos-Aulas</a></li>
+		<li><a href="#">Quem somos</a></li>
+		<li><a href="#">Fale Conosco</a></li>
+		<li id="cadastro"><a href="#">Entrar</a></li>
+		<li><a href="#">Cadastrar</a></li>
+	</ul>
+</nav>
+
+<div id="principal">
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
+<img src="livro.jpg" class="feed"> </img>
 </div>
- <div id="principal">
-</div>
 
+<footer id="rodape">
+	<p id="textorodape"> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...<article> </p>
+</footer>
 
-
-
-
- 
- 
- <center></center>
-	 
 </body>
-
-
-
-
-
-
-
 
 
 </html>
