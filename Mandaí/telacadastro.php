@@ -29,6 +29,15 @@ background-color: #cbdce2;
 	margin: 70px;
 	}
 
+	#telacadastro{
+		width: auto;
+		height: 1100px;
+		margin: 70px;
+		text-align: left;
+		padding-top: 100px;
+
+	}
+
 	#menu ul {		/*Personalização do Menu*/
 		list-style-type: none;
 	     margin: 0;
@@ -118,7 +127,44 @@ margin: 80px;
 </nav>
 
 <div id="principal">
+	<div id="telacadastro">
+							<form method="POST" action="controlador/cadastraUsuario/cadastrousuario.php" novalidate>
 
+								<!-- FALTA INSERIR A VARIAVEL REQUEST NOS INPUTS !-->
+
+						Digite seu nome:	<input   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
+
+							 Email: <input name="email" value="..." type="email" placeholder="E-Mail" required/><br><br>
+
+							 Crie sua senha:<input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha"/><br><br>
+
+							Confirme a senha: <input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha"/><br><br>
+
+							CPF: <input  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" required/><br><br>
+
+							Digite sua escola: <input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" required/><br><br>
+
+							Estado: <input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" required/><br><br>
+
+							Cidade/Campus: <input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" required/><br><br>
+
+
+							<!--Seleção Professor ou Aluno !-->
+
+							<h2> Você é professor,aluno ou aluno CP2? <h2>
+							<input type="radio"  name="opção" value="Professor"> Eu sou professor<br>
+
+							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
+
+							<input type="radio"  name="opção" value="alunoCP2"> Eu sou aluno CP2<br><br>
+
+							<label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>
+
+							<label><input name="aceitaTermos" type="checkbox"/>Li e concordo com os termos de uso e com a política de privacidade.</label><br/><br>
+
+							<input type="submit" value="Cadastrar"/>
+						</form>
+		</div>
 </div>
 
 <footer id="rodape">
