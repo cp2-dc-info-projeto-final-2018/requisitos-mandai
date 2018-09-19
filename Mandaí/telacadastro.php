@@ -2,9 +2,11 @@
 <html metacharset='utf8'>
 
 <style>
-	body {
+html,	body {
 background-attachment: fixed;
-
+margin: 0;
+padding: 0;
+height: 100%;
 	}
 
 	#topo {
@@ -22,20 +24,11 @@ background-attachment: fixed;
 	  }
 
 	#principal {
-
 background-color: #cbdce2;
 	width: auto;
-	height: 1400px;
+	height: 700px;
 	margin: 70px;
-	}
-
-	#telacadastro{
-		width: auto;
-		height: 1100px;
-		margin: 70px;
-		text-align: left;
-		padding-top: 100px;
-
+	border-radius: 10px;
 	}
 
 	#menu ul {		/*Personalização do Menu*/
@@ -70,8 +63,9 @@ background-color: #cbdce2;
 
 #rodape {
 	background: linear-gradient(#4169E1, #4682B4);
-	width: auto;
+	width: 100%;
 	height: 150px;
+	position: absolute;
 }
 
 #textorodape {
@@ -96,6 +90,33 @@ width: 300px;
 height: 300px;
 margin: 80px;
 
+}
+
+#telacadastro {
+	background-color: red;
+	top: 50%;
+	transform: translateY(4%);
+	height: 650px;
+	width: 1238px;
+	margin: 100px;
+	border-radius: 10px;
+
+}
+
+#formulario{
+	width: 50%;
+  margin: 0 auto;
+
+}
+
+label, .tabelainput  {
+	text-align:left;
+	       width:200px;
+	       display:block;
+	       float:left;
+	      	clear:right;
+	       		font-size:18;
+    				margin:5px;
 }
 
 </style>
@@ -127,42 +148,42 @@ margin: 80px;
 </nav>
 
 <div id="principal">
-	<div id="telacadastro">
-							<form method="POST" action="controlador/cadastraUsuario/cadastrousuario.php" novalidate>
 
-								<!-- FALTA INSERIR A VARIAVEL REQUEST NOS INPUTS !-->
+<div id="telacadastro">
+							<form id="formulario" method="POST" action="controlador/cadastraUsuario/cadastrousuario.php" novalidate>
 
-						Digite seu nome:	<input   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
 
-							 Email: <input name="email" value="..." type="email" placeholder="E-Mail" required/><br><br>
+						<label>Digite seu nome:</label>	<input class="tabelainput"   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
 
-							 Crie sua senha:<input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha"/><br><br>
+							 <label>Email:</label> <input class="tabelainput" name="email" value="..." type="email" placeholder="E-Mail" required/><br><br>
 
-							Confirme a senha: <input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha"/><br><br>
+							<label>Crie sua senha:</label><input class="tabelainput" minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha"/><br><br>
 
-							CPF: <input  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" required/><br><br>
+							<label>Confirme a senha:</label> <input class="tabelainput" minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha"/><br><br>
 
-							Digite sua escola: <input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" required/><br><br>
+							<label>CPF:</label> <input class="tabelainput"  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" required/><br><br>
 
-							Estado: <input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" required/><br><br>
+							<label>Digite sua escola:</label> <input class="tabelainput"   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" required/><br><br>
 
-							Cidade/Campus: <input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" required/><br><br>
+							<label>Estado:</label> <input class="tabelainput" minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" required/><br><br>
+
+							<label>Cidade/Campus:</label> <input class="tabelainput" minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade/Campus" required/><br><br>
 
 
 							<!--Seleção Professor ou Aluno !-->
 
-							<h2> Você é professor,aluno ou aluno CP2? <h2>
-							<input type="radio"  name="opção" value="Professor"> Eu sou professor<br>
+							<h2> Você é professor, aluno ou aluno Cp2? <h2>
+							<input class="tabelasegundaparte" type="radio"  name="opção" value="Professor"> Eu sou professor<br>
 
-							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
+							<input class="tabelasegundaparte" type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
 
-							<input type="radio"  name="opção" value="alunoCP2"> Eu sou aluno CP2<br><br>
+							<input class="tabelasegundaparte" type="radio"  name="opção" value="alunoCP2"> Eu sou aluno Cp2<br><br>
 
-							<label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>
+							<label class="labeltabela"><input class="tabelasegundaparte" name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>
 
-							<label><input name="aceitaTermos" type="checkbox"/>Li e concordo com os termos de uso e com a política de privacidade.</label><br/><br>
+							<label class="labeltabela"><input class="tabelasegundaparte" name="aceitaTermos" type="checkbox"/>Li e concordo com os termos de uso e com a política de privacidade.</label><br/><br>
 
-							<input type="submit" value="Cadastrar"/>
+							<br><input class="tabelasegundaparte" type="submit" value="Cadastrar"/>
 						</form>
 		</div>
 </div>
