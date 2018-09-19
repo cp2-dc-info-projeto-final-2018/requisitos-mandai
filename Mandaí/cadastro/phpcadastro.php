@@ -19,6 +19,17 @@ $erros = [];
         'Cidade' => FILTER_DEFAULT,
         'Estado' => FILTER_DEFAULT,
 			]
+
+			$nomePróprio = $validar['nomePróprio'];
+			$sobrenome = $validar['sobrenome'];
+			$senha = $validar['senha'];
+			$confirmaSenha = $validar['confirmaSenha'];
+			$email = $validar['email'];
+			$dataNasc = $validar['dataNasc'];
+			$aceitaTermos = $validar['aceitaTermos'];
+			$visibilidade = $validar['visibilidadePublicações'];
+			$alertasEmail = $validar['alertasEmail'];
+
 		);
 		$cpf = $request['CPF'];
     if($cpf == false)
@@ -108,6 +119,7 @@ $erros = [];
 		$erros[] = "Senhas diferentes";
 	}
 
+$validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 
 	if(buscausuario($request['email'])>0){
 			$erros[] = "Email já existe" ;

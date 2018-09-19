@@ -4,7 +4,7 @@
 	function criaConexaoBd()
 
 	{
-		$bd = new PDO('mysql:host=localhost;dbname=instacp2;charset=utf8',
+		$bd = new PDO('mysql:host=localhost;dbname=mandai;charset=utf8',
 					'cadastromandai',
 					'mandai303');
 
