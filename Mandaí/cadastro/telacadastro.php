@@ -1,4 +1,4 @@
-﻿<!DOCTYPE >
+<!DOCTYPE >
 <html metacharset='utf8'>
 
 <style>
@@ -128,7 +128,7 @@ margin: 80px;
 
 <div id="principal">
 	<div id="telacadastro">
-							<form method="POST" action="phpcadastro.php" novalidate>				
+							<form method="POST" action="phpcadastro.php" novalidate>
 
 						Digite seu nome:	<input   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
 

@@ -1,7 +1,5 @@
 <?php
 
-		require_once ('tabelaUsuario.php');
-
 $erros = [];
 
 		$request = array_map('trim', $_REQUEST);
@@ -17,9 +15,9 @@ $erros = [];
 				'alertasEmail' => FILTER_VALIDATE_BOOLEAN,
 				'aceitaTermos' => FILTER_VALIDATE_BOOLEAN,
         'CPF' => FILTER_DEFAULT,
-        'escola'=> FILTER_DEFAULT,
-        'cidade' => FILTER_DEFAULT,
-        'estado' => FILTER_DEFAULT,
+        'Escola'=> FILTER_DEFAULT,
+        'Cidade' => FILTER_DEFAULT,
+        'Estado' => FILTER_DEFAULT,
 			]
 		);
 		$cpf = $request['CPF'];
