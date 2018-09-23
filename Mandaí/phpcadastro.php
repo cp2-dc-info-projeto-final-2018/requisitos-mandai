@@ -14,10 +14,10 @@ $erros = [];
 				'confirmaSenha' => FILTER_DEFAULT,
 				'alertasEmail' => FILTER_VALIDATE_BOOLEAN,
 				'aceitaTermos' => FILTER_VALIDATE_BOOLEAN,
-        'CPF' => FILTER_DEFAULT,
-        'Escola'=> FILTER_DEFAULT,
-        'Cidade' => FILTER_DEFAULT,
-        'Estado' => FILTER_DEFAULT,
+				'CPF' => FILTER_DEFAULT,
+				'Escola'=> FILTER_DEFAULT,
+				'Cidade' => FILTER_DEFAULT,
+				'Estado' => FILTER_DEFAULT,
 			]
 		);
 		$cpf = $request['CPF'];
