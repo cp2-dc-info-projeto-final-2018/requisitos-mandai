@@ -1,10 +1,11 @@
-﻿<!DOCTYPE >
+<!DOCTYPE >
 <html metacharset='utf8'>
 
 <style>
-	body {
+html,	body {
 background-attachment: fixed;
-
+padding: 0px;
+margin: auto 0;
 	}
 
 	#topo {
@@ -128,41 +129,55 @@ margin: 80px;
 
 <div id="principal">
 	<div id="telacadastro">
-							<form method="POST" action="controlador/cadastraUsuario/cadastrousuario.php" novalidate>
+							<form method="POST" action="phpcadastro.php" novalidate>
+								<fieldset>
+						<label for="nome">Digite seu nome:</label>
+						<input   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
 
-								<!-- FALTA INSERIR A VARIAVEL REQUEST NOS INPUTS !-->
+							<label for="email">Email:</label>
+								<input name="email" value="..." type="email" placeholder="E-Mail" required/><br><br>
 
-						Digite seu nome:	<input   minlength="3" maxlength="50" name="nome" type="text" placeholder="Nome" required/><br><br>
+							 <label for="senha">Crie sua senha:</label>
+							 <input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha"/><br><br>
 
-							 Email: <input name="email" value="..." type="email" placeholder="E-Mail" required/><br><br>
+							<label for="csenha">Confirme a senha:</label>
+							<input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha"/><br><br>
 
-							 Crie sua senha:<input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha"/><br><br>
+							<label for="cpf">CPF:</label>
+							<input  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" required/><br><br>
 
-							Confirme a senha: <input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha"/><br><br>
+							<label for="escola">Digite sua escola:</label>
+							<input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" required/><br><br>
 
-							CPF: <input  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" required/><br><br>
+							<label for="estado">Estado: </label>
+							<input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" required/><br><br>
 
-							Digite sua escola: <input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" required/><br><br>
+							<label for="ccampus">Cidade/Campus: </label>
+							<input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" required/><br><br>
 
-							Estado: <input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" required/><br><br>
-
-							Cidade/Campus: <input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" required/><br><br>
 
 
 							<!--Seleção Professor ou Aluno !-->
 
 							<h2> Você é professor,aluno ou aluno CP2? <h2>
+						<label class="checkbox">
 							<input type="radio"  name="opção" value="Professor"> Eu sou professor<br>
-
+						</label>
+						<label class="checkbox">
 							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
-
+						</label>
+						<label class="checkbox">
 							<input type="radio"  name="opção" value="alunoCP2"> Eu sou aluno CP2<br><br>
-
+						</label>
+						<label class="checkbox">
 							<label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>
-
+						</label>
+						<label class="checkbox">
 							<label><input name="aceitaTermos" type="checkbox"/>Li e concordo com os termos de uso e com a política de privacidade.</label><br/><br>
+						</label>
 
-							<input type="submit" value="Cadastrar"/>
+							<input type="submit" value="Cadastrar" class="submit"/>
+						</fieldset>
 						</form>
 		</div>
 </div>
