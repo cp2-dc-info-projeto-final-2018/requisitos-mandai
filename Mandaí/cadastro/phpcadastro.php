@@ -20,7 +20,9 @@ $erros = [];
 				'Estado' => FILTER_DEFAULT,
 			]
 
-			$nomePróprio = $validar['nomePróprio'];
+			
+
+			$nome = $validar['nome'];
 			$sobrenome = $validar['sobrenome'];
 			$senha = $validar['senha'];
 			$confirmaSenha = $validar['confirmaSenha'];
@@ -29,8 +31,8 @@ $erros = [];
 			$aceitaTermos = $validar['aceitaTermos'];
 			$visibilidade = $validar['visibilidadePublicações'];
 			$alertasEmail = $validar['alertasEmail'];
+);
 
-		);
 		$cpf = $request['CPF'];
     if($cpf == false)
     {
