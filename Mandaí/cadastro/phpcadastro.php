@@ -1,39 +1,44 @@
 <?php
+require_once('tabelaUsuario.php');
 
 $erros = [];
 
-		$request = array_map('trim', $_REQUEST);
+		$validar = array_map('trim', $_REQUEST);
 
 
-		$request = filter_var_array(
-			$request,
+		$validar = filter_var_array(
+			$validar,
 			[
 				'nome' => FILTER_DEFAULT,
+				'sobrenome' => FILTER_DEFAULT,
 				'email' => FILTER_VALIDATE_EMAIL,
 				'senha' => FILTER_DEFAULT,
 				'confirmaSenha' => FILTER_DEFAULT,
 				'alertasEmail' => FILTER_VALIDATE_BOOLEAN,
+				'dataNasc' => FILTER_DEFAULT,
 				'aceitaTermos' => FILTER_VALIDATE_BOOLEAN,
-				'CPF' => FILTER_DEFAULT,
-				'Escola'=> FILTER_DEFAULT,
-				'Cidade' => FILTER_DEFAULT,
-				'Estado' => FILTER_DEFAULT,
+				'cpf' => FILTER_DEFAULT,
+				'escola'=> FILTER_DEFAULT,
+				'cidade' => FILTER_DEFAULT,
+				'estado' => FILTER_DEFAULT,
+				'visibilidadePublicações' => FILTER_VALIDATE_INT
 			]
+		);
 
-			
+		$nome = $validar['nome'];
+		$sobrenome = $validar['sobrenome'];
+		$senha = $validar['senha'];
+		$confirmaSenha = $validar['confirmaSenha'];
+		$email = $validar['email'];
+		$dataNasc = $validar['dataNasc'];
+		$cpf = $validar ['cpf'];
+		$escola = $validar ['escola'];
+		$estado = $validar ['estado'];
+		$aceitaTermos = $validar['aceitaTermos'];
+		$visibilidade = $validar['visibilidadePublicações'];
+		$alertasEmail = $validar['alertasEmail'];
 
-			$nome = $validar['nome'];
-			$sobrenome = $validar['sobrenome'];
-			$senha = $validar['senha'];
-			$confirmaSenha = $validar['confirmaSenha'];
-			$email = $validar['email'];
-			$dataNasc = $validar['dataNasc'];
-			$aceitaTermos = $validar['aceitaTermos'];
-			$visibilidade = $validar['visibilidadePublicações'];
-			$alertasEmail = $validar['alertasEmail'];
-);
-
-		$cpf = $request['CPF'];
+		$cpf = $validar['cpf'];
     if($cpf == false)
     {
       $erros[] = "CPF inválido";
@@ -43,13 +48,13 @@ $erros = [];
       $erros[] = "A quantidade de caracteres deve ser exatamente 11";
     }
 
-    $escola = $request['Escola'];
+    $escola = $validar['escola'];
     if($escola == false)
     {
       $erros[] = "Escola inválida";
     }
 
-    $cidade = $request['Cidade'];
+    $cidade = $validar['cidade'];
     if($cidade== false)
     {
       $erros[] = "cidade inválida";
@@ -59,7 +64,7 @@ $erros = [];
       $erros[] = "A quantidade de caracteres é inválida";
     }
 
-    $estado = $request['estado'];
+    $estado = $validar['estado'];
     if($estado == false)
     {
       $erros[] = "estado inválido";
@@ -71,7 +76,7 @@ $erros = [];
 
 
 
-		$nome = $request['nome'];
+		$nome = $validar['nome'];
 	if($nome == false)
 	{
 		$erros[] = "O nome informado não é válido";
@@ -82,7 +87,7 @@ $erros = [];
 }
 
 
-	$senha = $request['senha'];
+	$senha = $validar['senha'];
 
 	if($senha == false)
 	{
@@ -94,43 +99,40 @@ $erros = [];
 		$erros[] = "A quantidade de caracteres da senha deve estar entre 6 e 12";
 	}
 
-	$confsenha = $request['confirmaSenha'];
+	$confirmaSenha = $validar['confirmaSenha'];
 
-	if($confsenha == false)
+	if($confirmaSenha == false)
 	{
 		$erros[] = "Insira a confirmação de senha";
 	}
 
-	else if ( strlen($confsenha) < 6 || strlen($confsenha) > 12 )
+	else if ( strlen($confirmaSenha) < 6 || strlen($confirmaSenha) > 12 )
 	{
 		$erros[] = "O número de caracteres da confirmação de senha deve estar entre 6 e 12";
 	}
 
 
-	$termos = $request['aceitaTermos'];
+	$aceitaTermos = $validar['aceitaTermos'];
 
-	if($termos == false)
+	if($aceitaTermos == false)
 	{
 		$erros[] = "Aceite os termos de uso";
 	}
 
 
 
-	if($senha != $confsenha)
+	if($senha != $confirmaSenha)
 	{
 		$erros[] = "Senhas diferentes";
 	}
 
 $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 
-	if(buscausuario($request['email'])>0){
-			$erros[] = "Email já existe" ;
-	}
 
-	if (empty($erros) == true) {
-	insereusuario($request);
-
-	}
+	if ($email == false)
+	{
+		$erros[] = "Insira um e-mail válido.";
+	};
 
 
 ?>

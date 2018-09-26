@@ -294,58 +294,58 @@ margin: 80px;
 								<fieldset>
 
 						<div class="form-group">
-						  <label class="col-md-4 control-label" for="idNome">Nome</label>
+						  <label class="col-md-4 control-label" for="nome">Nome</label>
 						  <div class="col-md-5">
-						  <input id="idNome" name="idNome" minlength="3" maxlength="50" type="text" placeholder="Nome do usuaário" class="form-control input-md" required="">
+						  <input id="nome" name="nome" minlength="3" maxlength="50" type="text" placeholder="Nome do usuário" class="form-control input-md" required="">
 						  </div>
 						</div>
 
 
 							<div class="form-group">
-							<label class="col-md-4 control-label" for="idEmail">Email</label>
+							<label class="col-md-4 control-label" for="email">Email</label>
 							<div class="col-md-5">
-								<input id="idemail" name="email" value="..." type="email" placeholder="E-Mail" class="form-control input-md" required="">
+								<input id="email" name="email" value="..." type="email" placeholder="E-Mail" class="form-control input-md" required="">
 							</div>
 						</div>
 
 
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="idSenha">Senha</label>
+									<label class="col-md-4 control-label" for="senha">Senha</label>
 									<div class="col-md-5">
 							 <input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
 						 </div>
 					</div>
 
 								<div class="form-group">
-							<label class="col-md-4 control-label" for="idConfirmarSenha">Confirmar Senha</label>
+							<label class="col-md-4 control-label" for="confirmaSenha">Confirmar Senha</label>
 							<div class="col-md-5">
 							<input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha" class="form-control input-md" required="">
 						</div>
 				</div>
 
 							<div class="form-group">
-							<label class="col-md-4 control-label" for="idCpf">CPF</label>
+							<label class="col-md-4 control-label" for="cpf">CPF</label>
 							<div class="col-md-5">
-							<input  minlength="11" maxlength="11" name="CPF" type="text" placeholder="CPF" class="form-control input-md" required="">
+							<input  minlength="11" maxlength="11" name="cpf" type="text" placeholder="CPF" class="form-control input-md" required="">
 						</div>
 				</div>
 
 							<div class="form-group">
-							<label class="col-md-4 control-label" for="idEscola">Digite sua escola</label>
+							<label class="col-md-4 control-label" for="escola">Digite sua escola</label>
 							<div class="col-md-5">
 							<input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" class="form-control input-md" required="">
 						</div>
 				</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="idEscola">Digite seu estado</label>
+							<label class="col-md-4 control-label" for="estado">Digite seu estado</label>
 							<div class="col-md-5">
 							<input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" class="form-control input-md" required="">
 						</div>
 				</div>
 
 							<div class="form-group">
-							<label class="col-md-4 control-label" for="idEscola">Digite sua cidade</label>
+							<label class="col-md-4 control-label" for="cidade">Digite sua cidade</label>
 							<div class="col-md-5">
 							<input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
 						</div>

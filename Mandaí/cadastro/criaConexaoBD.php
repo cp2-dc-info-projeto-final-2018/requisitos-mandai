@@ -4,8 +4,8 @@
 	function criaConexaoBd()
 
 	{
-		$bd = new PDO('mysql:host=localhost;dbname=mandai;charset=utf8',
-					'cadastromandai',
+		$bd = new PDO('mysql:host=localhost;dbname=cadastromandai;charset=utf8',
+					'cadastroMandai',
 					'mandai303');
 
 		$bd ->setAttribute(PDO::ATTR_ERRMODE,
