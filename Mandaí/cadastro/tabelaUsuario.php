@@ -5,9 +5,10 @@
 		function insereUsuario($dadosNovoUsuario)
 		{
 			$bd = criaConexaoBd();
+			
 
 			$sql = $bd->prepare(
-			"INSERT INTO cadastro (nome, email, senha, alertasEmail, cpf, escola, estado, cidade,)
+			"INSERT INTO cadastro (nome, email, senha, alertasEmail, cpf, escola, estado, cidade)
 			VALUES (:nome, :email, :senha, :alertasEmail, :cpf, :escola, :estado, :cidade);");
 
 			$sql->bindValue(':nome', $dadosNovoUsuario['nome']);

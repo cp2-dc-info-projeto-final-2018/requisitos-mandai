@@ -135,8 +135,11 @@ $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 	};
 
 
-?>
+	if ( empty ( $erros )  ==  true ) {
+	insereusuario ( $validar );
+ 	}
 
+?>
 
 
 <?php foreach($erros as $msg) { ?>
