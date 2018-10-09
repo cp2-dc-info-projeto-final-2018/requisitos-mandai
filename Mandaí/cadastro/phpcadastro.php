@@ -146,3 +146,17 @@ $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 			<li><?= $msg ?></li>
 
 		<?php } ?>
+<?php
+		if ($erro != null)
+	{
+		session_start();
+		$_SESSION['erroLogin'] = $erro;
+		header('location: telacadastro.php');
+  }
+	else
+	{
+		session_start();
+		$_SESSION['emailUsuarioLogado'] = $email;
+		header('location: ../telaInicial/index.php');
+	}
+?>

@@ -1,4 +1,20 @@
-﻿<!DOCTYPE >
+<?php
+
+	session_start();
+	$email = $_SESSION['emailUsuarioLogado'];
+
+	if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
+	{
+		$_SESSION['erroLogin'] = "Identifique-se para acessar o site";
+
+		header('location: login.php');
+		exit();
+	}
+
+	$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+?>
+
+<!DOCTYPE HTML>
 <html metacharset='utf8'>
 <style type="text/css">
 
@@ -220,6 +236,8 @@ margin: 80px;
 	<img src="logo.png" id="logo"> </img>>
 
 </div>
+
+<a class="nav-link" href="Controladores/sair.php">Sair</a>
 
 <div id="tracado">
 </div>
