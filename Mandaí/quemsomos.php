@@ -107,29 +107,29 @@ margin: 80px;
 
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Mandaí</a>
+      <a class="navbar-brand">Mandaí</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="telaInicial/index.php">Início</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Matérias<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Matemática</a></li>
-          <li><a href="#">Português</a></li>
-          <li><a href="#">Física</a></li>
-					<li><a href="#">História</a></li>
-          <li><a href="#">Geografia</a></li>
-          <li><a href="#">Filosofia</a></li>
-					<li><a href="#">Sociologia</a></li>
-          <li><a href="#">Biologia</a></li>
-          <li><a href="#">Inglês</a></li>
-					<li><a href="#">Química</a></li>
-					<li><a href="#">Desenho</a></li>
-					<li><a href="#">Música/Arte</a></li>
-					<li><a href="#">Educação Física</a></li>
-					<li><a href="#">Linguagem de Programação</a></li>
-					<li><a href="#">Introdução a Ciência da Computação</a></li>
-					<li><a href="#">Banco de Dados</a></li>
-					<li><a href="#">Engenharia de Software</a></li>
+					<li><a href="materia/matematica.php">Matemática</a></li>
+					<li><a href="materia/portugues.php">Português</a></li>
+					<li><a href="materia/fisica.php">Física</a></li>
+					<li><a href="materia/historia.php">História</a></li>
+					<li><a href="materia/geografia.php">Geografia</a></li>
+					<li><a href="materia/filosofia.php">Filosofia</a></li>
+					<li><a href="materia/sociologia.php">Sociologia</a></li>
+					<li><a href="materia/biologia.php">Biologia</a></li>
+					<li><a href="materia/ingles.php">Inglês</a></li>
+					<li><a href="materia/quimica.php">Química</a></li>
+					<li><a href="materia/desenho.php">Desenho</a></li>
+					<li><a href="materia/musica.php">Música/Arte</a></li>
+					<li><a href="materia/educacaofisica.php">Educação Física</a></li>
+					<li><a href="materia/lp.php">Linguagem de Programação</a></li>
+					<li><a href="materia/icc.php">Introdução a Ciência da Computação</a></li>
+					<li><a href="materia/bd.php">Banco de Dados</a></li>
+					<li><a href="materia/engenharia.php">Engenharia de Software</a></li>
         </ul>
       </li>
       <li><a href="quemsomos.php">Quem somos</a></li>
