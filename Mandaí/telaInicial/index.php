@@ -70,8 +70,7 @@ background-color: #cbdce2;
 	left: 43%;
 }
 
-.feed {
-
+.feedPrincipal {
 width: 300px;
 height: 300px;
 margin: 80px;
@@ -143,6 +142,14 @@ margin: 80px;
 
 
 <div id="principal">
+
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+		<a href="../materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+
 
 </div>
 
