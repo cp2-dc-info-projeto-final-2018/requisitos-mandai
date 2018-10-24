@@ -1,5 +1,5 @@
 <?php
-	require_once('../../cadastro/tabelaUsuario.php');
+	require_once('../../cadastro/tabelaCadastro.php');
 
 	$erro = null;
 

@@ -215,6 +215,12 @@ height: 300px;
 margin: 80px;
 }
 
+#selecao{
+
+	z-index: 10;
+}
+
+
 </style>
 
 
@@ -351,8 +357,21 @@ margin: 80px;
 						</div>
 				</div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-
+				<div id="selecao">
 							<!--Seleção Professor ou Aluno !-->
 
 							<h2> Você é professor,aluno ou aluno CP2? <h2>
@@ -375,6 +394,9 @@ margin: 80px;
 							<input type="submit" value="Cadastrar" class="submit"/>
 						</fieldset>
 						</form>
+
+				</div>
+
 		</div>
 </div>
 

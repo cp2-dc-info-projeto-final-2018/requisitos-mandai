@@ -1,5 +1,5 @@
 <?php
-require_once('tabelaUsuario.php');
+require_once('tabelaCadastro.php');
 
 $erros = [];
 
@@ -21,7 +21,8 @@ $erros = [];
 				'escola'=> FILTER_DEFAULT,
 				'cidade' => FILTER_DEFAULT,
 				'estado' => FILTER_DEFAULT,
-				'visibilidadePublicações' => FILTER_VALIDATE_INT
+				'visibilidadePublicações' => FILTER_VALIDATE_INT,
+				'opção' => FILTER_DEFAULT
 			]
 		);
 
@@ -37,8 +38,14 @@ $erros = [];
 		$aceitaTermos = $validar['aceitaTermos'];
 		$visibilidade = $validar['visibilidadePublicações'];
 		$alertasEmail = $validar['alertasEmail'];
-
+		$opção = $validar['opção'];
 		$cpf = $validar['cpf'];
+
+		if ($opção == false)
+		{
+			$erros[] = "Selecione a opção";
+		}
+
     if($cpf == false)
     {
       $erros[] = "CPF inválido";
@@ -136,7 +143,7 @@ $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 
 
 	if ( empty ( $erros )  ==  true ) {
-	insereusuario ( $validar );
+	insereUsuario ( $validar );
  	}
 
 ?>

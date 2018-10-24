@@ -21,7 +21,11 @@
       $sql->bindValue(':cidade', $dadosNovoUsuario['cidade']);
 
 			$sql->execute();
+
+			return $db->lastInsertId();
 		}
+
+
 
 		function BuscaEmail(string $email)
   {
