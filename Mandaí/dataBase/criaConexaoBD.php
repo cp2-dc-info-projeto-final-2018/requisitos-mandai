@@ -5,7 +5,7 @@
 
 	{
 		$bd = new PDO('mysql:host=localhost;dbname=cadastromandai;charset=utf8',
-					'cadastroMandai',
+					'cadastromandai',
 					'mandai303');
 
 		$bd ->setAttribute(PDO::ATTR_ERRMODE,
