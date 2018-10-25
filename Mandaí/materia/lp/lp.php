@@ -145,6 +145,14 @@ margin: 80px;
 
 <div id="principal">
 
+	<!-- UPLOAD -->
+<form action="../../Controladores/upload.php" enctype="multipart/form-data" method="POST">
+
+<input name="arquivo" size="20" type="file"/>
+<input type="submit" value="Enviar"/>
+
+</form>
+
 </div>
 
 <footer id="rodape">
