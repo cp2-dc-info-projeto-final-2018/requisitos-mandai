@@ -1,5 +1,6 @@
 <?php
 require_once('tabelaCadastro.php');
+require_once('criaConexaoBD.php');
 
 $erros = [];
 
@@ -164,6 +165,6 @@ $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
 	{
 		session_start();
 		$_SESSION['emailUsuarioLogado'] = $email;
-		header('location: ../telaInicial/index.php');
+		header('location: ../index.php');
 	}
 ?>
