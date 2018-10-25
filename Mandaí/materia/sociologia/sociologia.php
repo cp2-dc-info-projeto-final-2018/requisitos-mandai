@@ -11,7 +11,7 @@
 		exit();
 	}
 
-	$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+//	$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
 ?>
 
 <!DOCTYPE HTML>
@@ -111,7 +111,7 @@ margin: 80px;
 
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../telaInicial/index.php">Início</a></li>
+    <li class="active"><a href="../../index.php">Início</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Matérias<span class="caret"></span></a>
         <ul class="dropdown-menu">
 					<li><a href="../matematica/matematica.php">Matemática</a></li>
@@ -133,9 +133,9 @@ margin: 80px;
 					<li><a href="../engenharia/engenharia.php">Engenharia de Software</a></li>
         </ul>
       </li>
-      <li><a href="../quemsomos.php">Quem somos</a></li>
-      <li><a href="../faleconosco.php">Fale Conosco</a></li>
-			<li><a class="nav-link" href="Controladores/sair.php">Sair</a></li>
+			<li><a href="../../quemsomos.php">Quem somos</a></li>
+			<li><a href="../../faleconosco.php">Fale Conosco</a></li>
+			<li><a class="nav-link" href="../../Controladores/sair.php">Sair</a></li>
 
     </ul>
   </div>

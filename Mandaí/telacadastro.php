@@ -296,7 +296,7 @@ margin: 80px;
 </nav>
 <div id="principal">
 	<div id="telacadastro">
-							<form method="POST" action="phpcadastro.php" novalidate>
+							<form method="POST" action="dataBase/phpcadastro.php" novalidate>
 								<fieldset>
 
 						<div class="form-group">
@@ -380,9 +380,6 @@ margin: 80px;
 						</label>
 						<label class="checkbox">
 							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
-						</label>
-						<label class="checkbox">
-							<input type="radio"  name="opção" value="alunoCP2"> Eu sou aluno CP2<br><br>
 						</label>
 						<label class="checkbox">
 							<label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>

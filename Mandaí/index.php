@@ -11,7 +11,7 @@
 		exit();
 	}
 
-	$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+	 // $fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY); 
 ?>
 
 <!DOCTYPE HTML>
