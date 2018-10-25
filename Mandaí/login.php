@@ -49,7 +49,7 @@
 
 		</form>
 
-		<form method="POST" action="../cadastro/telacadastro.php">
+		<form method="POST" action="dataBase/telacadastro.php">
 
 					<br>
 				Não possui conta?

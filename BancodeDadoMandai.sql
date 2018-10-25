@@ -1,41 +1,42 @@
-CREATE TABLE  ALUNOCP2 (
-Cod_aluno INT PRIMARY KEY NOT NULL,
-Nome VARCHAR (50), 
-Sobrenome VARCHAR (50)
+CREATE TABLE cadastro(
+matricula VARCHAR(9) NOT NULL,
+nome VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL,
+senha VARCHAR(60) NOT NULL,
+alertasEmail BOOLEAN NOT NULL,
+cpf VARCHAR(11) NOT NULL,
+escola VARCHAR(50) NOT NULL,
+estado VARCHAR(50) NOT NULL,
+cidade VARCHAR (50) NOT NULL,
+tipo INT NOT NULL,
+PRIMARY KEY(matricula)
 );
 
-
-CREATE TABLE PROFESSOR (
-Cod_professor INT PRIMARY KEY NOT NULL,
-Nome VARCHAR (50),
-Sobrenome VARCHAR (50)
+CREATE TABLE aluno(
+matricula_aluno VARCHAR(9) NOT NULL,
+PRIMARY KEY(matricula_aluno),
+FOREIGN KEY(matricula_aluno) REFERENCES cadastro(matricula)
 );
 
-CREATE TABLE USUARIO (
-Cod_usuario INT PRIMARY KEY NOT NULL,
-Nome VARCHAR (50),
-Sobrenome VARCHAR (50)
+CREATE TABLE professor(
+matricula_professor VARCHAR(7) NOT NULL,
+PRIMARY KEY(matricula_professor),
+FOREIGN KEY(matricula_professor) REFERENCES cadastro(matricula)
 );
 
-CREATE TABLE CONTEUDO (
-Cod_conteudo INT PRIMARY KEY NOT NULL,
-Nome VARCHAR (50),
-Nivelamento VARCHAR (10),
-Comentarios VARCHAR (500),
-Avaliacao INT NOT NULL,
-Especificar_materia VARCHAR (30), 
-);
-
-CREATE TABLE DISCIPLINA (
-Cod_disciplina INT PRIMARY KEY NOT NULL,
-Nome VARCHAR (50)
-);
-
-CREATE TABLE AVALIACAO (
-Cod_avaliacao INT PRIMARY KEY NOT NULL
+CREATE TABLE conteudo(
+cod_conteudo INT AUTO_INCREMENT NOT NULL,
+nome VARCHAR(50) NOT NULL,
+arquivo VARCHAR(100) NOT NULL,
+matricula_professor VARCHAR(7) NOT NULL,
+PRIMARY KEY(cod_conteudo),
+FOREIGN KEY(matricula_professor) REFERENCES professor(matricula_professor)
 );
 
 CREATE TABLE COMENTARIO (
-Cod_comentario INT PRIMARY KEY NOT NULL,
-Caracteres VARCHAR (500)
+cod_comentario INT AUTO_INCREMENT NOT NULL,
+Caracteres VARCHAR(500),
+cod_conteudo INT NOT NULL,
+PRIMARY KEY(cod_comentario),
+FOREIGN KEY(cod_conteudo) REFERENCES conteudo(cod_conteudo)
 );
