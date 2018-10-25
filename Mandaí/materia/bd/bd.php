@@ -113,23 +113,23 @@ margin: 80px;
       <li class="active"><a href="../telaInicial/index.php">Início</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Matérias<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="matematica.php">Matemática</a></li>
-          <li><a href="portugues.php">Português</a></li>
-          <li><a href="fisica.php">Física</a></li>
-					<li><a href="historia.php">História</a></li>
-          <li><a href="geografia.php">Geografia</a></li>
-          <li><a href="filosofia.php">Filosofia</a></li>
-					<li><a href="sociologia.php">Sociologia</a></li>
-          <li><a href="biologia.php">Biologia</a></li>
-          <li><a href="ingles.php">Inglês</a></li>
-					<li><a href="quimica.php">Química</a></li>
-					<li><a href="desenho.php">Desenho</a></li>
-					<li><a href="musica.php">Música/Arte</a></li>
-					<li><a href="educacaofisica.php">Educação Física</a></li>
-					<li><a href="lp.php">Linguagem de Programação</a></li>
-					<li><a href="icc.php">Introdução a Ciência da Computação</a></li>
-					<li><a href="bd.php">Banco de Dados</a></li>
-					<li><a href="engenharia.php">Engenharia de Software</a></li>
+					<li><a href="../matematica/matematica.php">Matemática</a></li>
+          <li><a href="../portugues/portugues.php">Português</a></li>
+          <li><a href="../fisica/fisica.php">Física</a></li>
+					<li><a href="../historia/historia.php">História</a></li>
+          <li><a href="../geografia/geografia.php">Geografia</a></li>
+          <li><a href="../filosofia/filosofia.php">Filosofia</a></li>
+					<li><a href="../sociologia/sociologia.php">Sociologia</a></li>
+          <li><a href="../biologia/biologia.php">Biologia</a></li>
+          <li><a href="../ingles/ingles.php">Inglês</a></li>
+					<li><a href="../quimica/quimica.php">Química</a></li>
+					<li><a href="../desenho/desenho.php">Desenho</a></li>
+					<li><a href="../musica/musica.php">Música/Arte</a></li>
+					<li><a href="../educacaofisica/educacaofisica.php">Educação Física</a></li>
+					<li><a href="../lp/lp.php">Linguagem de Programação</a></li>
+					<li><a href="../icc/icc.php">Introdução a Ciência da Computação</a></li>
+					<li><a href="../bd/bd.php">Banco de Dados</a></li>
+					<li><a href="../engenharia/engenharia.php">Engenharia de Software</a></li>
         </ul>
       </li>
       <li><a href="../quemsomos.php">Quem somos</a></li>
