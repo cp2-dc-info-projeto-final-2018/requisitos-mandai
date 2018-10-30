@@ -21,19 +21,20 @@
 	{
 		$erro = "Senha não informada";
 	}
-	else
-	{
-		$usuário = BuscaEmail($email);
-		if ($usuário == false)
+
+		$emailUsuario = BuscaEmail($email);
+		$senhaUsuario = BuscaSenha($senha);
+
+		if ($request['email'] != $emailUsuario)
 		{
 			$erro = "Nenhum usuário cadastrado com o e-mail informado";
 		}
-	  else if ($senha  == $usuário['senha'])
-		//(password_verify($senha, BuscaSenha($senha)) == false)
+
+	  else if ($request['senha'] != $senha)
 		{
 			$erro = "A senha está incorreta";
 		}
-	}
+
 
 	if ($erro != null)
 	{
