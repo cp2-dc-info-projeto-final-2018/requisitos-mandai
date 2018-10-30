@@ -45,22 +45,39 @@
 
 
   }
-
-  function BuscaSenha(string $senha)
+  function BuscaSenha($email)
   {
     $db = criaConexaoBD();
 
     $sql = $db->prepare(
-      "SELECT senha FROM cadastro WHERE senha = :senha;"
+      "SELECT senha FROM cadastro WHERE email = :email;"
 
     );
 
-    	$sql->bindValue(':senha', $senha );
+    	$sql->bindValue(':email', $email );
 
 
     	$sql -> execute();
 
       return $sql -> fetch();
   }
-	
+  function BuscaNome($email)
+  {
+    $db = criaConexaoBD();
+
+    $sql = $db->prepare(
+      "SELECT nome FROM cadastro WHERE email = :email;"
+
+    );
+
+    	$sql->bindValue(':email', $email );
+
+
+    	$sql -> execute();
+
+      return $sql -> fetch();
+  }
+
+
+
 ?>
