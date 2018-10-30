@@ -11,26 +11,34 @@ $erros = [];
 			$validar,
 			[
 				'nome' => FILTER_DEFAULT,
+				'sobrenome' => FILTER_DEFAULT,
 				'email' => FILTER_VALIDATE_EMAIL,
 				'senha' => FILTER_DEFAULT,
 				'confirmaSenha' => FILTER_DEFAULT,
+				'alertasEmail' => FILTER_VALIDATE_BOOLEAN,
+				'dataNasc' => FILTER_DEFAULT,
+				'aceitaTermos' => FILTER_VALIDATE_BOOLEAN,
 				'cpf' => FILTER_DEFAULT,
 				'escola'=> FILTER_DEFAULT,
-				'matricula'=>FILTER_DEFAULT,
 				'cidade' => FILTER_DEFAULT,
 				'estado' => FILTER_DEFAULT,
+				'visibilidadePublicações' => FILTER_VALIDATE_INT,
 				'opção' => FILTER_DEFAULT
 			]
 		);
 
 		$nome = $validar['nome'];
+		$sobrenome = $validar['sobrenome'];
 		$senha = $validar['senha'];
 		$confirmaSenha = $validar['confirmaSenha'];
 		$email = $validar['email'];
+		$dataNasc = $validar['dataNasc'];
 		$cpf = $validar ['cpf'];
 		$escola = $validar ['escola'];
-		$matricula = $validar['matricula'];
 		$estado = $validar ['estado'];
+		$aceitaTermos = $validar['aceitaTermos'];
+		$visibilidade = $validar['visibilidadePublicações'];
+		$alertasEmail = $validar['alertasEmail'];
 		$opção = $validar['opção'];
 		$cpf = $validar['cpf'];
 
@@ -53,16 +61,6 @@ $erros = [];
     {
       $erros[] = "Escola inválida";
     }
-
-		$matricula = $validar['matricula'];
-		if($matricula == false)
-		{
-			$erros[] = "matrícula inválida";
-		}
-		else if (strlen($matricula) > 9 || strlen($matricula) < 7)
-		{
-				$erros[] = "quantidade de caracteres inválida";
-		}
 
     $cidade = $validar['cidade'];
     if($cidade== false)
@@ -119,6 +117,14 @@ $erros = [];
 	else if ( strlen($confirmaSenha) < 6 || strlen($confirmaSenha) > 12 )
 	{
 		$erros[] = "O número de caracteres da confirmação de senha deve estar entre 6 e 12";
+	}
+
+
+	$aceitaTermos = $validar['aceitaTermos'];
+
+	if($aceitaTermos == false)
+	{
+		$erros[] = "Aceite os termos de uso";
 	}
 
 
