@@ -127,14 +127,14 @@
     </div>
 
     <!-- Jquery JS-->
-    < src="vendor1/jquery/jquery.min.js"></>
+    <src="vendor1/jquery/jquery.min.js"></>
     <!-- Vendor JS-->
-    < src="vendor1/select2/select2.min.js"></>
-    < src="vendor1/datepicker/moment.min.js"></>
-    < src="vendor1/datepicker/daterangepicker.js"></>
+    <src="vendor1/select2/select2.min.js"></>
+    <src="vendor1/datepicker/moment.min.js"></>
+    <src="vendor1/datepicker/daterangepicker.js"></>
 
     <!-- Main JS-->
-    < src="js1/global.js"></>
+    <src="js1/global.js"></>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
