@@ -146,10 +146,17 @@ margin: 80px;
 						</div>
 				</div>
 
-							<div class="form-group">
+				<div class="form-group">
 							<label class="col-md-4 control-label" for="escola">Digite sua escola</label>
 							<div class="col-md-5">
 							<input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" class="form-control input-md" required="">
+						</div>
+				</div>
+
+				<div class="form-group">
+							<label class="col-md-4 control-label" for="matricula">Digite sua matricula</label>
+							<div class="col-md-5">
+							<input   minlength="7" maxlength="9" name="matricula" type="text" placeholder="matricula" class="form-control input-md" required="">
 						</div>
 				</div>
 
@@ -191,13 +198,6 @@ margin: 80px;
 						<label class="checkbox">
 							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
 						</label>
-						<label class="checkbox">
-							<label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/><br>
-						</label>
-						<label class="checkbox">
-							<label><input name="aceitaTermos" type="checkbox"/>Li e concordo com os termos de uso e com a política de privacidade.</label><br/><br>
-						</label>
-
 							<input type="submit" value="Cadastrar" class="submit"/>
 						</fieldset>
 						</form>
