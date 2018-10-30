@@ -1,217 +1,142 @@
-<!DOCTYPE HTML>
-<html metacharset='utf8'>
-<style type="text/css">
-
-	body {
-background-attachment: fixed;
-	}
-
-	#topo {
-	background-color: black;
-	width: full;
-	height: 200px;
-	background: linear-gradient(#4169E1, #4682B4);
-	  }
-
-	  #tracado {
-	background-color: white;
-	width: full;
-	height: 5px;
-
-	  }
-
-	#principal {
-
-background-color: #cbdce2;
-	width: auto;
-	height: 1400px;
-	margin: 70px;
-	}
-
-#cadastro {
-	margin-left: 850px;
-}
-
-#rodape {
-	background: linear-gradient(#4169E1, #4682B4);
-	width: auto;
-	height: 150px;
-}
-
-#textorodape {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	text-align: center;
-}
-
-#logo {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 150px;
-	height: 150px;
-	left: 43%;
-}
-
-.feedPrincipal {
-width: 300px;
-height: 300px;
-margin: 80px;
-}
-
-.nav-link {
- padding: 500px;
- margin-left: 1000px;
-}
-
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="deion" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Title Page-->
+    <title>Mandaí</title>
 
-	<title>Acervo Mandaí</title>
+    <!-- Icons font CSS-->
+    <link href="vendor1/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor1/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
+    <!-- Vendor CSS-->
+    <link href="vendor1/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor1/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css1/main.css" rel="stylesheet" media="all">
 </head>
 
-<body background="fundo.jpg">
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Cadastro</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Nome</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="first_name">
+                                            <label class="label--desc">Primeiro nome</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="last_name">
+                                            <label class="label--desc">Sobrenome</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Cidade</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="cidade">
+                                </div>
+                            </div>
+                        </div>
+						<div class="form-row">
+                            <div class="name">Estado</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="estado">
+                                </div>
+                            </div>
+                        </div>
+						<div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+						<div class="form-row">
+                            <div class="name">CPF</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="cpf">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Escola</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="escola">
+                                </div>
+                            </div>
+                        </div>
 
-<div id="topo">
-	<img src="logo.png" id="logo"> </img>
-</div>
-
-<div id="tracado">
-</div>
-
-
-
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">Mandaí</a>
+                        <div class="form-row">
+                            <div class="name"></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="subject">
+                                            <option disabled="disabled" selected="selected">Você é:</option>
+                                            <option>Aluno</option>
+                                            <option>Professor</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+												<div class="form-row">
+                            <div class="name">Matrícula</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="matricula">
+                                </div>
+                            </div>
+                        </div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Início</a></li>
 
-			<li><a class="nav-link" href="Controladores/sair.php">Sair</a></li>
+    <!-- Jquery JS-->
+    < src="vendor1/jquery/jquery.min.js"></>
+    <!-- Vendor JS-->
+    < src="vendor1/select2/select2.min.js"></>
+    < src="vendor1/datepicker/moment.min.js"></>
+    < src="vendor1/datepicker/daterangepicker.js"></>
 
-    </ul>
-  </div>
-</nav>
+    <!-- Main JS-->
+    < src="js1/global.js"></>
 
-
-
-<div id="principal">
-	<div id="telacadastro">
-							<form method="POST" action="dataBase/phpcadastro.php" novalidate>
-								<fieldset>
-
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="nome">Nome</label>
-						  <div class="col-md-5">
-						  <input id="nome" name="nome" minlength="3" maxlength="50" type="text" placeholder="Nome do usuário" class="form-control input-md" required="">
-						  </div>
-						</div>
-
-
-							<div class="form-group">
-							<label class="col-md-4 control-label" for="email">Email</label>
-							<div class="col-md-5">
-								<input id="email" name="email" value="..." type="email" placeholder="E-Mail" class="form-control input-md" required="">
-							</div>
-						</div>
-
-
-								<div class="form-group">
-									<label class="col-md-4 control-label" for="senha">Senha</label>
-									<div class="col-md-5">
-							 <input minlength="6" maxlength="12" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
-						 </div>
-					</div>
-
-								<div class="form-group">
-							<label class="col-md-4 control-label" for="confirmaSenha">Confirmar Senha</label>
-							<div class="col-md-5">
-							<input minlength="6" maxlength="12" name="confirmaSenha" type="password" placeholder="Confirmar senha" class="form-control input-md" required="">
-						</div>
-				</div>
-
-							<div class="form-group">
-							<label class="col-md-4 control-label" for="cpf">CPF</label>
-							<div class="col-md-5">
-							<input  minlength="11" maxlength="11" name="cpf" type="text" placeholder="CPF" class="form-control input-md" required="">
-						</div>
-				</div>
-
-				<div class="form-group">
-							<label class="col-md-4 control-label" for="escola">Digite sua escola</label>
-							<div class="col-md-5">
-							<input   minlength="3" maxlength="50" name="escola" type="text" placeholder="Escola" class="form-control input-md" required="">
-						</div>
-				</div>
-
-				<div class="form-group">
-							<label class="col-md-4 control-label" for="matricula">Digite sua matricula</label>
-							<div class="col-md-5">
-							<input   minlength="7" maxlength="9" name="matricula" type="text" placeholder="matricula" class="form-control input-md" required="">
-						</div>
-				</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="estado">Digite seu estado</label>
-							<div class="col-md-5">
-							<input minlength="3" maxlength="50" name="estado" type="text" placeholder="Estado" class="form-control input-md" required="">
-						</div>
-				</div>
-
-							<div class="form-group">
-							<label class="col-md-4 control-label" for="cidade">Digite sua cidade</label>
-							<div class="col-md-5">
-							<input minlength="3" maxlength="50" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
-						</div>
-				</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-				<div id="selecao">
-							<!--Seleção Professor ou Aluno !-->
-
-							<h2> Você é professor ou aluno? <h2>
-						<label class="checkbox">
-							<input type="radio"  name="opção" value="Professor"> Eu sou professor<br>
-						</label>
-						<label class="checkbox">
-							<input type="radio"  name="opção" value="aluno"> Eu sou aluno<br>
-						</label>
-							<input type="submit" value="Cadastrar" class="submit"/>
-						</fieldset>
-						</form>
-
-				</div>
-
-		</div>
-</div>
-
-<footer id="rodape">
-	<p id="textorodape"> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...<article> </p>
-</footer>
-
-</body>
-
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+<!-- end document-->

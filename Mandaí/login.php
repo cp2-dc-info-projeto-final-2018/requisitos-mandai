@@ -15,49 +15,109 @@
 		header('location: index.php');
 	}
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>Acervo Mandaí - Identificar-se</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min." integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Mandaí</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--================LOGO DA GUIA===============================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-	<div class="container">
-			<nav class="navbar navbar-dark bg-dark">
-				<h1 class="navbar-brand">Acervo Mandaí</h1>
-			</nav>
 
-		<h1>Bem-vindo ao Acervo Mandaí</h1>
-		<p>Por favor, identifique-se:</p>
-
-		<?php if ($erro != null) { ?>
+	<?php if ($erro != null) { ?>
 			<div class"alert alert-warning">
 					<p>Erro: <?= $erro ?> </p>
 			</div>
 		<?php } ?>
 
-		<form method="POST" action="Controladores/entrar.php">
-			<div class="form-group">
-				<label>E-mail: <input name="email" type="email" required placeholder="" class="form-control"/></label>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form method="POST" action="Controladores/entrar.php" class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Bem vindo ao Mandaí
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Senha"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Entrar
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Ainda não possui um cadastro?
+						</span>
+
+						<a class="txt2" href="telacadastro.php">
+							Registre-se
+						</a>
+					</div>
+				</form>
 			</div>
-			<div class="form-group">
-				<label>Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="" class="form-control"/></label>
-			</div>
-			<input type="submit" value="Entrar"/>
-
-		</form>
-
-		<form method="POST" action="telacadastro.php">
-
-					<br>
-				Não possui conta?
-			<br>
-						<input type="submit" value="Cadastre-se"/>
-
-	</form>
-
+		</div>
 	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	< src="vendor/jquery/jquery-3.2.1.min.js"></>
+<!--===============================================================================================-->
+	< src="vendor/animsition/js/animsition.min.js"></>
+<!--===============================================================================================-->
+	< src="vendor/bootstrap/js/popper.js"></>
+	< src="vendor/bootstrap/js/bootstrap.min.js"></>
+<!--===============================================================================================-->
+	< src="vendor/select2/select2.min.js"></>
+<!--===============================================================================================-->
+	< src="vendor/daterangepicker/moment.min.js"></>
+	< src="vendor/daterangepicker/daterangepicker.js"></>
+<!--===============================================================================================-->
+	< src="vendor/countdowntime/countdowntime.js"></>
+<!--===============================================================================================-->
+	< src="js/main.js"></>
+
 </body>
 </html>
