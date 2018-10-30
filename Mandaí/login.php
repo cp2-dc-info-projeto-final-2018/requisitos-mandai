@@ -103,21 +103,21 @@
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-	< src="vendor/jquery/jquery-3.2.1.min.js"></>
+	<src="vendor/jquery/jquery-3.2.1.min.js"></>
 <!--===============================================================================================-->
-	< src="vendor/animsition/js/animsition.min.js"></>
+	<src="vendor/animsition/js/animsition.min.js"></>
 <!--===============================================================================================-->
-	< src="vendor/bootstrap/js/popper.js"></>
-	< src="vendor/bootstrap/js/bootstrap.min.js"></>
+	<src="vendor/bootstrap/js/popper.js"></>
+	<src="vendor/bootstrap/js/bootstrap.min.js"></>
 <!--===============================================================================================-->
-	< src="vendor/select2/select2.min.js"></>
+	<src="vendor/select2/select2.min.js"></>
 <!--===============================================================================================-->
-	< src="vendor/daterangepicker/moment.min.js"></>
-	< src="vendor/daterangepicker/daterangepicker.js"></>
+	<src="vendor/daterangepicker/moment.min.js"></>
+	<src="vendor/daterangepicker/daterangepicker.js"></>
 <!--===============================================================================================-->
-	< src="vendor/countdowntime/countdowntime.js"></>
+	<src="vendor/countdowntime/countdowntime.js"></>
 <!--===============================================================================================-->
-	< src="js/main.js"></>
+	<src="js/main.js"></>
 
 </body>
 </html>
