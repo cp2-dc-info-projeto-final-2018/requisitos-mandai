@@ -1,4 +1,5 @@
 <?php
+
 	require_once('../dataBase/tabelaCadastro.php');
 
 	$erro = null;
@@ -34,8 +35,6 @@
 			$erro = "A senha está incorreta";
 		}
 	}
-
-var_dump($erro);
 
 	if ($erro != null)
 	{

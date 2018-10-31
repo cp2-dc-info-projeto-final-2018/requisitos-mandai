@@ -1,7 +1,6 @@
 <?php
 
 		require_once('criaConexaoBD.php');
-		require_once('phpcadastro.php');
 
 		function insereUsuario($dadosNovoUsuario)
 		{
