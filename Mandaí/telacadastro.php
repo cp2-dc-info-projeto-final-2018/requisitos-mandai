@@ -35,25 +35,52 @@
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        <div class="form-row m-b-55">
-                            <div class="name">Nome</div>
+
+                        <div class="form-row">
+                            <div class="name">Nome Completo</div>
                             <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
-                                            <label class="label--desc">Primeiro nome</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
-                                            <label class="label--desc">Sobrenome</label>
-                                        </div>
-                                    </div>
+                                <div class="input-group">
+                                            <input class="input--style-5" type="text" name="nome">
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-row">
+                                        <div class="name">Email</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="email" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Senha</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="password" name="senha">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Confirmar Senha</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="password" name="ConfirmarSenha">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Escola</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="escola">
+                                            </div>
+                                        </div>
+                                    </div>
+
                         <div class="form-row">
                             <div class="name">Cidade</div>
                             <div class="value">
@@ -70,14 +97,7 @@
                                 </div>
                             </div>
                         </div>
-						<div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
-                                </div>
-                            </div>
-                        </div>
+
 						<div class="form-row">
                             <div class="name">CPF</div>
                             <div class="value">
@@ -86,14 +106,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Escola</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="escola">
-                                </div>
-                            </div>
-                        </div>
+
+
 
                         <div class="form-row">
                             <div class="name"></div>

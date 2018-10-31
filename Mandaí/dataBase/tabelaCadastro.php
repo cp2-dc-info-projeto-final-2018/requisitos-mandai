@@ -26,7 +26,7 @@
 
 		}
 
-		function BuscaEmail(string $email)
+		function BuscaEmail($email)
 
   {
 
