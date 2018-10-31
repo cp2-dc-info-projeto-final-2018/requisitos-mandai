@@ -29,9 +29,7 @@
 		{
 			$erro = "Nenhum usuário cadastrado com o e-mail informado";
 		}
-	  else if ($senha  == $usuário['senha'])
-		(password_verify($senha, BuscaSenha($senha)) == false);
-		{
+	  else if (password_verify($senha, BuscaSenha($senha)) == false){
 			$erro = "A senha está incorreta";
 		}
 	}
