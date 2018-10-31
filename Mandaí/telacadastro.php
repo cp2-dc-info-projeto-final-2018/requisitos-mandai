@@ -67,7 +67,7 @@
                                         <div class="name">Confirmar Senha</div>
                                         <div class="value">
                                             <div class="input-group">
-                                                <input class="input--style-5" type="password" name="ConfirmarSenha">
+                                                <input class="input--style-5" type="password" name="ConfirmaSenha">
                                             </div>
                                         </div>
                                     </div>
@@ -114,16 +114,18 @@
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
-                                            <option disabled="disabled" selected="selected">Você é:</option>
-                                            <option>Aluno</option>
-                                            <option>Professor</option>
+
+                                            <input class="buttonn" name="tipo" type="radio" value="1"> Aluno<br>
+                                            <input class="buttonn" name="tipo" type="radio" value="2"> Professor<br>
+
+
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 												<div class="form-row">
                             <div class="name">Matrícula</div>
                             <div class="value">

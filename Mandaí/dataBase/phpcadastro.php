@@ -19,7 +19,7 @@ $erros = [];
 				'matricula'=>FILTER_DEFAULT,
 				'cidade' => FILTER_DEFAULT,
 				'estado' => FILTER_DEFAULT,
-				'opção' => FILTER_DEFAULT
+				'tipo' => FILTER_DEFAULT
 			]
 		);
 
@@ -31,10 +31,10 @@ $erros = [];
 		$escola = $validar ['escola'];
 		$matricula = $validar['matricula'];
 		$estado = $validar ['estado'];
-		$opção = $validar['opção'];
+		$tipo = $validar['tipo'];
 		$cpf = $validar['cpf'];
 
-		if ($opção == false)
+		if ($tipo == false)
 		{
 			$erros[] = "Selecione a opção";
 		}

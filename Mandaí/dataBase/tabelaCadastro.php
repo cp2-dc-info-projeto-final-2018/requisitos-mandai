@@ -8,17 +8,18 @@
 
 
 			$sql = $db->prepare(
-			"INSERT INTO cadastro (nome, email, senha, cpf, escola, matricula, estado, cidade)
-			VALUES (:nome, :email, :senha, :cpf, :escola, :matricula, :estado, :cidade);");
+			"INSERT INTO cadastro (nome, email, senha, cpf, escola, matricula, estado, cidade, tipo)
+			VALUES (:nome, :email, :senha, :cpf, :escola, :matricula, :estado, :cidade, :tipo);");
 
 			$sql->bindValue(':nome', $dadosNovoUsuario['nome']);
 			$sql->bindValue(':email', $dadosNovoUsuario['email']);
 			$sql->bindValue(':senha', $dadosNovoUsuario['senha']);
 			$sql->bindValue(':cpf', $dadosNovoUsuario['cpf']);
 			$sql->bindValue(':escola', $dadosNovoUsuario['escola']);
-			$sql->bindValue(':matricula', $dadosNovoUsuario['matricula']);
       $sql->bindValue(':estado', $dadosNovoUsuario['estado']);
       $sql->bindValue(':cidade', $dadosNovoUsuario['cidade']);
+			$sql->bindValue(':tipo', $dadosNovoUsuario['tipo']);
+			$sql->bindValue(':matricula', $dadosNovoUsuario['matricula']);
 
 			$sql->execute();
 
