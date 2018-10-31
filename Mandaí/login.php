@@ -1,9 +1,10 @@
 <?php
+
 	session_start();
 	if (array_key_exists('erroLogin', $_SESSION))
 	{
-	$erro = $_SESSION['erroLogin'];
-	unset($_SESSION['erroLogin']);
+		$erro = $_SESSION['erroLogin'];
+		unset($_SESSION['erroLogin']);
   }
 	else
 	{
@@ -55,13 +56,15 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form method="POST" action="Controladores/entrar.php" class="login100-form validate-form">
+	<form method="POST" action="Controladores/entrar.php" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						Bem vindo ao Mandaí
 					</span>
 					<span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
+
+
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
@@ -72,14 +75,14 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="senha">
 						<span class="focus-input100" data-placeholder="Senha"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button type="submit" class="login100-form-btn">
 								Entrar
 							</button>
 						</div>
@@ -94,7 +97,7 @@
 							Registre-se
 						</a>
 					</div>
-				</form>
+</form>
 			</div>
 		</div>
 	</div>
