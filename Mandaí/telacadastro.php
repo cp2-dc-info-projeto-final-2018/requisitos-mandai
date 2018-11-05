@@ -34,7 +34,8 @@
                     <h2 class="title">Cadastro</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+
+                    <form action="Controladores/phpcadastro.php">
 
                         <div class="form-row">
                             <div class="name">Nome Completo</div>
@@ -134,9 +135,11 @@
                                 </div>
                             </div>
                         </div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Registrar</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit"> Cadastrar </button>
                         </div>
+
                      </form>
+
                 </div>
             </div>
         </div>
