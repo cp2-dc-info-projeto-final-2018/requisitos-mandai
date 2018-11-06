@@ -1,5 +1,19 @@
+<?php
+session_start();
+if(array_key_exists('erroLogin', $_SESSION))
+{
+$erros = $_SESSION['erroLogin'];
+unset($_SESSION['erroLogin']);
+}
+else {
+  $erros = null;
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-BR">
 
 <head>
     <!-- Required meta tags-->
@@ -26,6 +40,9 @@
     <link href="css1/main.css" rel="stylesheet" media="all">
 </head>
 
+
+
+
 <body>
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
@@ -34,6 +51,14 @@
                     <h2 class="title">Cadastro</h2>
                 </div>
                 <div class="card-body">
+
+                  <?php if ($erros != null) { ?>
+                    <ul>
+                    <?php foreach($erros as $msg) { ?>
+                          <li><?= $msg ?></li>
+                    <?php } ?>
+                    </ul>
+                  <?php } ?>
 
                     <form action="Controladores/phpcadastro.php">
 
@@ -68,7 +93,7 @@
                                         <div class="name">Confirmar Senha</div>
                                         <div class="value">
                                             <div class="input-group">
-                                                <input class="input--style-5" type="password" name="ConfirmaSenha">
+                                                <input class="input--style-5" type="password" name="confirmaSenha">
                                             </div>
                                         </div>
                                     </div>

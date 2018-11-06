@@ -72,19 +72,9 @@ else if ( strlen($senha) < 6 || strlen($senha) > 12 )
 
 $confirmaSenha = $validar['confirmaSenha'];
 
-if($confirmaSenha == false)
+if ($senha != $validar['confirmaSenha'])
 {
-	$erros[] = "Insira a confirmação de senha";
-}
-
-else if ( strlen($confirmaSenha) < 6 || strlen($confirmaSenha) > 12 )
-{
-	$erros[] = "O número de caracteres da confirmação de senha deve estar entre 6 e 12";
-}
-
-if($senha != $confirmaSenha)
-{
-	$erros[] = "Senhas diferentes";
+	$erros[] = "As senhas não correspondem";
 }
 
 $validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
@@ -159,18 +149,20 @@ if ($tipo == false)
 
 		<?php } ?>
 
+
 <?php
 
-		if ($erros == null)
+		if ($erros != null)
 	{
 		session_start();
 		$_SESSION['erroLogin'] = $erros;
-		header('location: telacadastro.php');
+		header('location: ../telacadastro.php');
   }
-	else if ($erros != null)
+	else if ($erros == null)
 	{
 		session_start();
 		$_SESSION['emailUsuarioLogado'] = $email;
 		header('location: ../index.php');
 	}
+
 ?>
