@@ -4,15 +4,15 @@
 
 	$erro = null;
 
-	$request = array_map('trim', $_REQUEST);
-	$request = filter_var_array(
-	               $request,
+	$validar = array_map('trim', $_REQUEST);
+	$validar = filter_var_array(
+	               $validar,
 	               [ 'email' => FILTER_VALIDATE_EMAIL,
 	                 'senha' => FILTER_DEFAULT ]
 	           );
 
-	$email = $request['email'];
-	$senha = $request['senha'];
+	$email = $validar['email'];
+	$senha = $validar['senha'];
 
 	if ($email == false)
 	{

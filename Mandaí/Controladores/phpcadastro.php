@@ -77,7 +77,7 @@ if ($senha != $validar['confirmaSenha'])
 	$erros[] = "As senhas não correspondem";
 }
 
-$validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
+$validar['senha'] = password_hash("$senha", PASSWORD_DEFAULT);
 
 //escola
 $escola = $validar['escola'];
