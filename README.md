@@ -47,3 +47,5 @@ https://media.discordapp.net/attachments/449946088602861568/514515083909398528/u
 -Caso o usuário não possua uma conta ele pode clicar no botão de registro e ser redirecionado pra tela de cadastro:
 https://cdn.discordapp.com/attachments/449946088602861568/514501034228449281/unknown.png
 https://cdn.discordapp.com/attachments/449946088602861568/514501074514608158/unknown.png
+
+-Após o cadastro e o login ser efetuado, o acesso ao site é liberado.
