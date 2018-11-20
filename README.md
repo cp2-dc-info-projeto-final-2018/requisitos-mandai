@@ -38,3 +38,12 @@ Banco de Dados
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/BancodeDadoMandai.sql
 
 Manual
+
+Elaboramos um sucinto manual para o usuário, que consiste no passo a passo que deve ser feito para o melhor uso do nosso site.
+
+-A nossa primeira tela é a tela de login como mostrado a seguir:
+https://media.discordapp.net/attachments/449946088602861568/514515083909398528/unknown.png?width=841&height=473
+
+-Caso o usuário não possua uma conta ele pode clicar no botão de registro e ser redirecionado pra tela de cadastro:
+https://cdn.discordapp.com/attachments/449946088602861568/514501034228449281/unknown.png
+https://cdn.discordapp.com/attachments/449946088602861568/514501074514608158/unknown.png
