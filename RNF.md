@@ -10,11 +10,4 @@ O sistema deverá ser prático e organizado;
 O sistema deverá conter somente materias de domínio público;
 
 ### RNF 04
-Os aquivos serão armazenados em PDF;
-
-### RNF 05 
-Os professores que deverão determinar quem terá acesso aos materiais compartilhados;
-
-
-
-
+Os arquivos serão armazenados em PDF;
