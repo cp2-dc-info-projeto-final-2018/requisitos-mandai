@@ -19,12 +19,12 @@ Professora Viviane (Inglês).
 Requisitos Funcionais
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/RF.md
 
-
 Requisitos Não Funcionais
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/RNF.md
 
 Diagrama Casos de Uso
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/casosdeuso.md.asta
+
 Descrição dos Casos
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/casosdeusocompleto.md
 
