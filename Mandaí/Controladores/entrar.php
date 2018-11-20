@@ -1,49 +1,55 @@
 <?php
 
-	require_once('../dataBase/tabelaCadastro.php');
+require_once('../dataBase/tabelaCadastro.php');
 
-	$erro = null;
+$erro = "";
 
-	$validar = array_map('trim', $_REQUEST);
-	$validar = filter_var_array(
-	               $validar,
-	               [ 'email' => FILTER_VALIDATE_EMAIL,
-	                 'senha' => FILTER_DEFAULT ]
-	           );
+$request = array_map('trim', $_REQUEST);
+$request = filter_var_array(
+               $request,
+               [ 'email' => FILTER_VALIDATE_EMAIL,
+                 'senha' => FILTER_DEFAULT ]
+           );
 
-	$email = $validar['email'];
-	$senha = $validar['senha'];
 
-	if ($email == false)
+$email = $request['email'];
+$senha = $request['senha'];
+
+if ($email == false)
+{
+	$erro = "E-mail inválido ou não informado";
+}
+else if ($senha == false)
+{
+	$erro = "Senha inválida ou não informada";
+}
+else
+{
+	$usuário = BuscaUsuárioPorEmail($email);
+	if ($usuário == false)
 	{
-		$erro = "E-Mail não informado";
+		$erro = "Usuário não cadastrado";
 	}
-		else if ($senha == false)
+	else if (password_verify($senha, $usuário['senha']) == false)
 	{
-		$erro = "Senha não informada";
+		$erro = "Senha inválida";
 	}
-	else
-	{
-		$usuário = BuscaEmail($email);
-		if ($usuário == false)
-		{
-			$erro = "Nenhum usuário cadastrado com o e-mail informado";
-		}
-	  else if (password_verify($senha, BuscaSenha($senha))){
-			$erro = "A senha está incorreta";
-		}
-	}
+}
 
-	if ($erro != null)
-	{
-		session_start();
-		$_SESSION['erroLogin'] = $erro;
-		header('location: ../login.php');
-  }
-	else
-	{
-		session_start();
-		$_SESSION['emailUsuarioLogado'] = $email;
-		header('location: ../index.php');
-	}
+
+session_start();
+if ($erro == null)
+{
+		$_SESSION['emailUsuarioLogado'] = $usuário['email'];
+
+		header('Location: ../index.php');
+
+}
+else
+{
+	$_SESSION['erroLogin'] = $erro;
+
+	header('Location: ../login.php');
+
+}
 ?>
