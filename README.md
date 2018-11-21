@@ -34,6 +34,8 @@ Modelagem:
 
 Diagrama de Classes
 https://cdn.discordapp.com/attachments/449946088602861568/514592636699541517/unknown.png
+arquivo editável: https://www.draw.io/?state=%7B%22ids%22:%5B%221FlJC1Bk2tSy0nNBNqCamtvuXzyYf-k_v%22%5D,%22action%22:%22open%22,%22userId%22:%22100454631943828028154%22%7D#G1FlJC1Bk2tSy0nNBNqCamtvuXzyYf-k_v
+
 Banco de Dados
 https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/BancodeDadoMandai.sql
 
