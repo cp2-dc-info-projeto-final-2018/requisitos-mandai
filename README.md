@@ -17,10 +17,10 @@ Stakeholder
 Professora Viviane (Inglês).
 
 Requisitos Funcionais
-https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/RF.md
+https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/Documenta%C3%A7%C3%A3o%20necess%C3%A1ria/RF.md
 
 Requisitos Não Funcionais
-https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/RNF.md
+https://github.com/cp2-dc-info-projeto-final-2018/requisitos-mandai/blob/master/Documenta%C3%A7%C3%A3o%20necess%C3%A1ria/RNF.md
 
 Casos de Uso:
 
