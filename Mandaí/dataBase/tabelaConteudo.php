@@ -1,24 +1,59 @@
 <?php
 
-		require_once('criaConexaoBD.php');
-		require_once('tabelaCadastro.php');
+function EntregaPublicacao(int $idUsuario, string $arquivo, DateTime $data, string $descricao)
+{
+	$bd = criaConexaoBD();
 
-		function insereConteudo($novoConteudo)
-		{
-			$idProfessor = insereUsuario($dadosNovoProfessor);
-    //  $idDisciplina = insereDisciplina($novaDisciplina);
+	$sql = $bd->prepare('INSERT INTO conteudo (nome, arquivo, matricula_professor)
+	                     VALUES (:nome, :arquivo, :matricula_professor)');
 
-			$db = criaConexaoBd();
+	$sql->bindValue(':arquivo', $arquivo);
+	$sql->bindValue(':nome', $nome);
+	$sql->bindValue(':matricula_professor', $matriculaProfessor);
 
-			$sql = $db->prepare(
-			"INSERT INTO conteudo (material, id_professor, id_disciplina)
-			VALUES (:material, :id_professor, :id_disciplina);");
+	$sql->execute();
+}
 
-			$sql->bindValue(':material', $novoConteudo['material']);
-			$sql->bindValue(':id_professor', $idProfessor);
-    //  $sql->bindValue(':id_disciplina',$id);
+function BuscaPublicacao($matriculaProfessor)
+{
+	$bd = CriaConexãoBd();
 
-			$sql->execute();
+	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor FROM conteudo WHERE matricula_professor = :matricula_professor');
 
-			//Na criação do controlador chamar apenas a função insereProfessor
-		}
+	$sql->bindValue(':matricula_professor', $matriculaProfessor);
+
+	$sql->execute();
+
+	return $sql->fetchAll();
+}
+
+function BuscaCaminhoCompleto(int $matriculaProfessor, int $idConteudo)
+{
+	$bd = CriaConexãoBd();
+
+	$sql = $bd->prepare('SELECT arquivo FROM conteudo
+	                     WHERE matricula_professor = :matricula_professor
+											 AND cod_conteudo = :cod_conteudo');
+
+	$sql->bindValue(':matricula_professor', $matriculaProfessor);
+	$sql->bindValue(':cod_conteudo', $idConteudo);
+
+	$sql->execute();
+
+	return $sql->fetch();
+}
+
+function RemovePublicacao($matriculaProfessor, $idConteudo){
+	$bd = CriaConexãoBd();
+
+	$sql = $bd->prepare('DELETE FROM conteudo
+											 WHERE matricula_professor = :matricula_professor
+											 AND cod_conteudo = :cod_conteudo');
+
+	$sql->bindValue(':matricula_professor', $matriculaProfessor);
+	$sql->bindValue(':cod_conteudo', $idConteudo);
+
+	$sql->execute();
+}
+
+?>
