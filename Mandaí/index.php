@@ -1,4 +1,5 @@
 <?php
+require_once('dataBase/tabelaCadastro.php');
 
 	session_start();
 	$email = $_SESSION['emailUsuarioLogado'];
@@ -131,15 +132,34 @@ margin: 80px;
 					<li><a href="materia/engenharia/engenharia.php">Engenharia de Software</a></li>
         </ul>
       </li>
-      <li><a href="quemsomos.php">Quem somos</a></li>
-      <li><a href="faleconosco.php">Fale Conosco</a></li>
 			<li><a class="nav-link" href="Controladores/sair.php">Sair</a></li>
 
     </ul>
   </div>
 </nav>
 
+<form action="Controladores/upload.php" enctype="multipart/form-data" method="POST">
 
+<input name="arquivo" size="20" type="file"/>
+<input type="submit" value="Enviar"/>
+
+</form>
+
+<?php
+
+			$resultados = BuscaUsuarioPorEmail($email);
+			$idUsuarioConectado = $resultados['id'];
+			$publicacoes = BuscaPublicacao($idUsuarioConectado);
+
+			foreach ($publicacoes as $p)
+			{ ?>
+				<p><?= $p['data']?></p>
+				<img src="<?= $p['arquivo']?>">
+				<p><?= $p['descricao']?></p>
+				<a href="Controladores/removeUpload.php?idConteudo=<?= $p['idConteudo'] ?>"> Remover</a>
+ <?php } ?>
+
+</body>
 
 <div id="principal">
 

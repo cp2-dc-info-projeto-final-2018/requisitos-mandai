@@ -2,22 +2,9 @@
 
 		require_once('criaConexaoBD.php');
 
-		function BuscaUsuárioPorEmail(string $email)
-{
-	$bd = criaConexaoBD();
-
-	$sql = $bd->prepare('SELECT * FROM cadastro WHERE email = :email');
-
-	$sql->bindValue(':email', $email);
-
-	$sql->execute();
-
-	return $sql->fetch();
-}
-
 function insereUsuario($dadosNovoUsuario)
 {
-	$db = criaConexaoBd();
+	$db = criaConexaoBD();
 
 
 	$sql = $db->prepare(
@@ -37,6 +24,19 @@ function insereUsuario($dadosNovoUsuario)
 	$sql->execute();
 
 	return $db->lastInsertId();
+
+	function BuscaUsuarioPorEmail($email)
+{
+$bd = criaConexaoBD();
+
+$sql = $bd->prepare('SELECT nome, email, senha, cpf, escola, matricula, estado, cidade, tipo FROM cadastro WHERE email = :email');
+
+$sql->bindValue(':email', $email);
+
+$sql->execute();
+
+return $sql->fetch();
+}
 
 }
 
