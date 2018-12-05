@@ -25,7 +25,7 @@ else if ($senha == false)
 }
 else
 {
-	$usuário = BuscaUsuárioPorEmail($email);
+	$usuário = BuscaUsuarioPorEmail($email);
 	if ($usuário == false)
 	{
 		$erro = "Usuário não cadastrado";

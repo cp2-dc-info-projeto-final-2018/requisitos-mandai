@@ -1,5 +1,6 @@
 <?php
 require_once('dataBase/tabelaCadastro.php');
+require_once('dataBase/TabelaConteudo.php');
 
 	session_start();
 	$email = $_SESSION['emailUsuarioLogado'];
@@ -82,6 +83,10 @@ margin: 80px;
  margin-left: 1000px;
 }
 
+.container-fluid {
+background-color:  black;
+}
+
 </style>
 
 
@@ -138,38 +143,41 @@ margin: 80px;
   </div>
 </nav>
 
+<br><br>
+<?php
+	$usuarioConectado = BuscaUsuarioPorEmail($email);
+	if($usuarioConectado['tipo'] == 2){
+?>
 <form action="Controladores/upload.php" enctype="multipart/form-data" method="POST">
 
-<input name="arquivo" size="20" type="file"/>
-<input type="submit" value="Enviar"/>
+<b>Selecione o aquirvo:</b> <input name="arquivo" size="20" type="file"/>
+<b>Insira o nome do aquirvo:</b> <input name="nome" type="text"/>
+<input type="submit" value="Enviar" />
 
 </form>
-
-<?php
-
-			$resultados = BuscaUsuarioPorEmail($email);
-			$idUsuarioConectado = $resultados['id'];
-			$publicacoes = BuscaPublicacao($idUsuarioConectado);
-
-			foreach ($publicacoes as $p)
-			{ ?>
-				<p><?= $p['data']?></p>
-				<img src="<?= $p['arquivo']?>">
-				<p><?= $p['descricao']?></p>
-				<a href="Controladores/removeUpload.php?idConteudo=<?= $p['idConteudo'] ?>"> Remover</a>
- <?php } ?>
+<?php } ?>
 
 </body>
 
+
 <div id="principal">
+	<?php
 
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
-		<a href="materia/matematica/matematica.php"><img src="livro.png" class="feedPrincipal"></a>
+				$usuarioConectado = BuscaUsuarioPorEmail($email);
+				$matriculaUsuarioConectado = $usuarioConectado['matricula'];
+				$publicacoes = BuscaPublicacao();
 
+				foreach ($publicacoes as $p)
+				{ ?>
+					<img src="<?= $p['arquivo']?>">
+					<p><?= $p['nome']?></p>
+
+					<?php
+					if ($usuarioConectado['matricula'] == $p['matricula_professor'])
+						{ ?> <a href="Controladores/removeUpload.php?idConteudo=<?= $p['cod_conteudo'] ?>"> Remover</a> <?php } ?>
+
+
+	 <?php } ?>
 
 </div>
 

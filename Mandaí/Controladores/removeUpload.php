@@ -8,7 +8,7 @@
     if (array_key_exists('emailUsuarioLogado', $_SESSION))
     {
     	$resultados = BuscaUsuarioPorEmail($email);
-    	$idUsuarioConectado = $resultados['id'];
+    	$matriculaProfessor = $resultados['matricula'];
     }
     else
     {
@@ -18,9 +18,9 @@
     }
 
     $request = array_map('trim', $_REQUEST);
-    $request = filter_var_array($request, ['idPublicacao' => FILTER_VALIDATE_INT]);
+    $request = filter_var_array($request, ['idConteudo' => FILTER_VALIDATE_INT]);
 
-    $idPublicacao = $request['idPublicacao'];
+    $idPublicacao = $request['idConteudo'];
     if($idPublicacao == false)
     {
     	$erro = 'Id da tarefa inválido ou não informado.';
@@ -28,10 +28,10 @@
 
     if ($erro == null)
     {
-        $resultado = BuscaCaminhoCompleto($idUsuarioConectado, $idPublicacao);
+        $resultado = BuscaCaminhoCompleto($matriculaProfessor, $idPublicacao);
         $arq = $resultado['arquivo'];
         unlink("../$arq");
-        RemovePublicacao($idUsuarioConectado, $idPublicacao);
+        RemovePublicacao($matriculaProfessor, $idPublicacao);
     }
     else
     {

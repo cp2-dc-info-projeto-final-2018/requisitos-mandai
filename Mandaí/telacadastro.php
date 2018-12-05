@@ -141,8 +141,8 @@ else {
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
 
-                                            <input class="buttonn" name="tipo" type="radio" value="1"> Aluno<br>
-                                            <input class="buttonn" name="tipo" type="radio" value="2"> Professor<br>
+                                            <input class="buttonn" name="tipo" type="radio" value="1"> Sou Aluno<br>
+                                            <input class="buttonn" name="tipo" type="radio" value="2"> Sou Professor<br>
 
 
                                         </select>

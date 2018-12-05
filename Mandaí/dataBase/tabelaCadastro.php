@@ -23,9 +23,19 @@ function insereUsuario($dadosNovoUsuario)
 
 	$sql->execute();
 
-	return $db->lastInsertId();
+	if($dadosNovoUsuario['tipo'] == 2)
+		{
+			$sql = $db -> prepare(
+				"INSERT INTO professor (matricula_professor)
+					VALUES (:matricula_professor);");
 
-	function BuscaUsuarioPorEmail($email)
+					$sql -> bindValue(':matricula_professor', $dadosNovoUsuario['matricula']);
+					$sql -> execute();
+		}
+
+}
+
+function BuscaUsuarioPorEmail($email)
 {
 $bd = criaConexaoBD();
 
@@ -37,8 +47,5 @@ $sql->execute();
 
 return $sql->fetch();
 }
-
-}
-
 
 ?>

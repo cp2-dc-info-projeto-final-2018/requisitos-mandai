@@ -52,7 +52,7 @@ $erros = [];
 		$erros[] = "Insira um e-mail válido.";
 	}
 
-	else if (BuscaUsuárioPorEmail($email) != false)
+	else if (BuscaUsuarioPorEmail($email) != false)
 	{
 	$erros[] = "Já existe um aluno cadastrado com esse e-mail";
 	}

@@ -1,6 +1,6 @@
 <?php
 
-function EntregaPublicacao(int $idUsuario, string $arquivo, DateTime $data, string $descricao)
+function EntregaPublicacao(string $matriculaProfessor, string $arquivo, DateTime $data, string $nome)
 {
 	$bd = criaConexaoBD();
 
@@ -14,13 +14,11 @@ function EntregaPublicacao(int $idUsuario, string $arquivo, DateTime $data, stri
 	$sql->execute();
 }
 
-function BuscaPublicacao($matriculaProfessor)
+function BuscaPublicacao()
 {
-	$bd = CriaConexãoBd();
+	$bd = criaConexaoBD();
 
-	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor FROM conteudo WHERE matricula_professor = :matricula_professor');
-
-	$sql->bindValue(':matricula_professor', $matriculaProfessor);
+	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor, cod_conteudo FROM conteudo');
 
 	$sql->execute();
 
@@ -29,7 +27,7 @@ function BuscaPublicacao($matriculaProfessor)
 
 function BuscaCaminhoCompleto(int $matriculaProfessor, int $idConteudo)
 {
-	$bd = CriaConexãoBd();
+	$bd = criaConexaoBD();
 
 	$sql = $bd->prepare('SELECT arquivo FROM conteudo
 	                     WHERE matricula_professor = :matricula_professor
@@ -44,7 +42,7 @@ function BuscaCaminhoCompleto(int $matriculaProfessor, int $idConteudo)
 }
 
 function RemovePublicacao($matriculaProfessor, $idConteudo){
-	$bd = CriaConexãoBd();
+	$bd = criaConexaoBD();
 
 	$sql = $bd->prepare('DELETE FROM conteudo
 											 WHERE matricula_professor = :matricula_professor

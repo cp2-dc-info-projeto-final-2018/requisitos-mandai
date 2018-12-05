@@ -8,8 +8,9 @@ session_start();
 $email = $_SESSION['emailUsuarioLogado'];
 if (array_key_exists('emailUsuarioLogado', $_SESSION))
 {
-	$resultados = BuscaUsuarioPorEmail($email);
-	$idUsuarioConectado = $resultados['id'];
+	$usuarioConectado = BuscaUsuarioPorEmail($email);
+	$matriculaProfessor = $usuarioConectado['matricula'];
+	/*validar se o usuario é professor */
 }
 else
 {
@@ -19,19 +20,19 @@ else
 }
 
 $request = array_map('trim', $_REQUEST);
-$request = filter_var_array($request, [ 'descricao' => FILTER_DEFAULT ]);
+$request = filter_var_array($request, [ 'nome' => FILTER_DEFAULT ]);
 
-$descricao = $request['descricao'];
+$nome = $request['nome'];
 
-if(array_key_exists('arq', $_FILES) == false)
+if(array_key_exists('arquivo', $_FILES) == false)
 {
 	$erro = "Arquivo não carregado.";
 }
 else
 {
-	$arq = $_FILES['arq'];
+	$arq = $_FILES['arquivo'];
 
-	$pastaDestino = "Carregamentos/Usuario_$idUsuarioConectado";
+	$pastaDestino = "Carregamentos/Usuario_$matriculaProfessor";
 	mkdir("../$pastaDestino");
 
 	$prefixo = uniqid();
@@ -52,20 +53,22 @@ else
 
 }
 
-if($descricao == false)
+if($nome == false)
 {
-	$descricao = "";
+	$nome = "";
 }
 
 if ($erro == null)
 {
-	EntregaPublicacao($idUsuarioConectado, $caminhoCompleto, new DateTime(), $descricao);
+	EntregaPublicacao($matriculaProfessor, $caminhoCompleto, new DateTime(), $nome);
 	header('Location: ../index.php');
 	exit();
 }
 else
 {
 	$_SESSION['erroCarregamento'] = $erro;
+	/*Direcionar e mensagem de erro*/
+	echo $erro;
 }
 
 ?>
