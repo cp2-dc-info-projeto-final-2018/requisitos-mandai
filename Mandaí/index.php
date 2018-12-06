@@ -127,6 +127,7 @@ background-color:  black;
 						foreach ($array as $disciplina) {
 							 echo $disciplina;
 						}
+					?>
 
 					<li><a href="index.php?disciplina=<?=$disciplina['id']?>">Matemática <?= $disciplina['nome']?></a></li>
           <li><a href="materia/portugues.php">Português</a></li>
