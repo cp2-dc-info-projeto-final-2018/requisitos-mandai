@@ -117,8 +117,18 @@ background-color:  black;
     <ul class="nav navbar-nav">
       <li class="active"><a href="index.php">Início</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Matérias<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="materia/matematica.php">Matemática</a></li>
+
+				<ul class="dropdown-menu">
+
+					<?php
+						$array = array (
+							'1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9', '10', '11', '12', '13', '14', '15', '16', '17'
+						);
+						foreach ($array as $disciplina) {
+							 echo $disciplina;
+						}
+
+					<li><a href="index.php?disciplina=<?=$disciplina['id']?>">Matemática <?= $disciplina['nome']?></a></li>
           <li><a href="materia/portugues.php">Português</a></li>
           <li><a href="materia/fisica.php">Física</a></li>
 					<li><a href="materia/historia.php">História</a></li>

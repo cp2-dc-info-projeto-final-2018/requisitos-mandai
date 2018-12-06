@@ -11,6 +11,7 @@ function EntregaPublicacao(string $matriculaProfessor, string $arquivo, DateTime
 	$sql->bindValue(':nome', $nome);
 	$sql->bindValue(':matricula_professor', $matriculaProfessor);
 
+	var_dump ($matriculaProfessor);
 	$sql->execute();
 }
 

@@ -134,7 +134,7 @@ if ($tipo == false)
 		}
 		else if (strlen($matricula) > 9 || strlen($matricula) < 7)
 		{
-				$erros[] = "quantidade de caracteres inválida";
+				$erros[] = "A quantidade de caracteres da matrícula é inválida";
 		}
 
 
