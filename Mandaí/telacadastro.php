@@ -1,4 +1,8 @@
 <?php
+require_once('dataBase/tabelaDisciplina.php');
+
+$listaDisciplinas = buscaDisciplinas();
+
 session_start();
 if(array_key_exists('erroLogin', $_SESSION))
 {
@@ -98,40 +102,7 @@ else {
                                         </div>
                                     </div>
 
-                                    <div class="form-row">
-                                        <div class="name">Escola</div>
-                                        <div class="value">
-                                            <div class="input-group">
-                                                <input class="input--style-5" type="text" name="escola">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                        <div class="form-row">
-                            <div class="name">Cidade</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="cidade">
-                                </div>
-                            </div>
-                        </div>
-						<div class="form-row">
-                            <div class="name">Estado</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="estado">
-                                </div>
-                            </div>
-                        </div>
-
-						<div class="form-row">
-                            <div class="name">CPF</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="cpf">
-                                </div>
-                            </div>
-                        </div>
+                              
 
 
 
@@ -156,7 +127,11 @@ else {
                                         <div class="name">Disciplina</div>
                                         <div class="value">
                                             <div class="input-group">
-                                                <input class="input--style-5" type="text" name="disciplina">
+                                              <select name="disciplina" form="upload">
+                                                      <?php foreach ($listaDisciplinas as $disciplina) { ?>
+                                                      <option value="<?=$disciplina['id']?>"><?= $disciplina['nome']?></option>
+                                                      <?php } ?>
+                                              </select>
                                             </div>
                                         </div>
                                     </div>

@@ -8,16 +8,12 @@ function insereUsuario($dadosNovoUsuario)
 
 
 	$sql = $db->prepare(
-	"INSERT INTO cadastro (nome, email, senha, cpf, escola, matricula, estado, cidade, tipo)
-	VALUES (:nome, :email, :senha, :cpf, :escola, :matricula, :estado, :cidade, :tipo);");
+	"INSERT INTO cadastro (nome, email, senha, cpf, matricula, tipo)
+	VALUES (:nome, :email, :senha, :matricula, :tipo);");
 
 	$sql->bindValue(':nome', $dadosNovoUsuario['nome']);
 	$sql->bindValue(':email', $dadosNovoUsuario['email']);
 	$sql->bindValue(':senha', $dadosNovoUsuario['senha']);
-	$sql->bindValue(':cpf', $dadosNovoUsuario['cpf']);
-	$sql->bindValue(':escola', $dadosNovoUsuario['escola']);
-	$sql->bindValue(':estado', $dadosNovoUsuario['estado']);
-	$sql->bindValue(':cidade', $dadosNovoUsuario['cidade']);
 	$sql->bindValue(':tipo', $dadosNovoUsuario['tipo']);
 	$sql->bindValue(':matricula', $dadosNovoUsuario['matricula']);
 
@@ -39,7 +35,7 @@ function BuscaUsuarioPorEmail($email)
 {
 $bd = criaConexaoBD();
 
-$sql = $bd->prepare('SELECT nome, email, senha, cpf, escola, matricula, estado, cidade, tipo FROM cadastro WHERE email = :email');
+$sql = $bd->prepare('SELECT nome, email, senha, matricula, tipo FROM cadastro WHERE email = :email');
 
 $sql->bindValue(':email', $email);
 

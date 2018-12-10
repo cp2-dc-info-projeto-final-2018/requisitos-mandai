@@ -20,7 +20,8 @@ else
 }
 
 $request = array_map('trim', $_REQUEST);
-$request = filter_var_array($request, [ 'nome' => FILTER_DEFAULT ]);
+$request = filter_var_array($request, [ 'nome' => FILTER_DEFAULT ]
+																			);
 
 $nome = $request['nome'];
 
@@ -60,7 +61,7 @@ if($nome == false)
 
 if ($erro == null)
 {
-	EntregaPublicacao($matriculaProfessor, $caminhoCompleto, new DateTime(), $nome);
+	InsereConteudo($matriculaProfessor, $caminhoCompleto, $nome, $idDisciplina);
 	header('Location: ../index.php');
 	exit();
 }

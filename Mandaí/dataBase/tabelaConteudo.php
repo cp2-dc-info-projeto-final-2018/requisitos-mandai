@@ -1,15 +1,16 @@
 <?php
 
-function EntregaPublicacao(string $matriculaProfessor, string $arquivo, DateTime $data, string $nome)
+function InsereConteudo(string $matriculaProfessor, string $arquivo, int $idDisciplina, string $nome)
 {
 	$bd = criaConexaoBD();
 
-	$sql = $bd->prepare('INSERT INTO conteudo (nome, arquivo, matricula_professor)
-	                     VALUES (:nome, :arquivo, :matricula_professor)');
+	$sql = $bd->prepare('INSERT INTO conteudo (nome, arquivo, matricula_professor, idDisciplina)
+	                     VALUES (:nome, :arquivo, :matricula_professor, :idDisciplina)');
 
 	$sql->bindValue(':arquivo', $arquivo);
 	$sql->bindValue(':nome', $nome);
 	$sql->bindValue(':matricula_professor', $matriculaProfessor);
+	$sql->bindValue(':idDisciplina', $idDisciplina);
 
 	var_dump ($matriculaProfessor);
 	$sql->execute();
@@ -19,7 +20,7 @@ function BuscaPublicacao()
 {
 	$bd = criaConexaoBD();
 
-	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor, cod_conteudo FROM conteudo');
+	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor, cod_conteudo, idDisciplina FROM conteudo');
 
 	$sql->execute();
 

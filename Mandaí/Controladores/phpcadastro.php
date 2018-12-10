@@ -14,11 +14,7 @@ $erros = [];
 				'email' => FILTER_VALIDATE_EMAIL,
 				'senha' => FILTER_DEFAULT,
 				'confirmaSenha' => FILTER_DEFAULT,
-				'cpf' => FILTER_DEFAULT,
-				'escola'=> FILTER_DEFAULT,
 				'matricula'=>FILTER_DEFAULT,
-				'cidade' => FILTER_DEFAULT,
-				'estado' => FILTER_DEFAULT,
 				'tipo' => FILTER_DEFAULT,
 				'disciplina' => FILTER_DEFAULT
 			]
@@ -28,12 +24,8 @@ $erros = [];
 		$senha = $validar['senha'];
 		$confirmaSenha = $validar['confirmaSenha'];
 		$email = $validar['email'];
-		$cpf = $validar ['cpf'];
-		$escola = $validar ['escola'];
 		$matricula = $validar['matricula'];
-		$estado = $validar ['estado'];
 		$tipo = $validar['tipo'];
-		$cpf = $validar['cpf'];
 		$disciplina = $validar['disciplina'];
 
 	//nome
@@ -80,46 +72,6 @@ if ($senha != $validar['confirmaSenha'])
 }
 
 $validar['senha'] = password_hash("$senha", PASSWORD_DEFAULT);
-
-//escola
-$escola = $validar['escola'];
-if($escola == false)
-{
-	$erros[] = "Escola inválida";
-}
-
-//Cidade
-$cidade = $validar['cidade'];
-if($cidade== false)
-{
-	$erros[] = "cidade inválida";
-}
-else if( strlen($cidade) > 50 )
-{
-	$erros[] = "A quantidade de caracteres é inválida";
-}
-
-//estado
-$estado = $validar['estado'];
-if($estado == false)
-{
-	$erros[] = "estado inválido";
-}
-else if( strlen($estado)>50)
-{
-	$erros[] = "A quantidade de caracteres é inválida";
-}
-
-//cpf
-$cpf = $validar['cpf'];
-if($cpf == false)
-{
-	$erros[] = "CPF inválido";
-}
-else if( strlen($cpf) != 11)
-{
-	$erros[] = "A quantidade de caracteres deve ser exatamente 11";
-}
 
 //tipo
 $tipo = $validar['tipo'];

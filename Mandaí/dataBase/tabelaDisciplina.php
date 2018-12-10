@@ -24,4 +24,15 @@ function insereRegencia(string $matriculaProfessor, int $idDisciplina)
         $sql -> execute();
 }
 
+function buscaDisciplinas()
+{
+	$bd = criaConexaoBD();
+
+	$sql = $bd -> prepare ('SELECT * FROM disciplina');
+	$sql -> execute();
+
+	return $sql -> fetchAll();
+	
+}
+
 ?>

@@ -1,6 +1,9 @@
 <?php
 require_once('dataBase/tabelaCadastro.php');
-require_once('dataBase/TabelaConteudo.php');
+require_once('dataBase/tabelaConteudo.php');
+require_once('dataBase/tabelaDisciplina.php');
+
+$listaDisciplinas = buscaDisciplinas();
 
 	session_start();
 	$email = $_SESSION['emailUsuarioLogado'];
@@ -115,8 +118,7 @@ background-color:  black;
 <body>
 
 <div id="topo">
-	<img src="logo.png" id="logo"> </img>
-
+	<h1 id="logo">Mandaí</h1>
 </div>
 
 <div id="tracado">
@@ -133,32 +135,12 @@ background-color:  black;
 
 				<ul class="dropdown-menu">
 
-<?php
-					$db = criaConexaoBD();
-				$sql = $bd -> prepare =	('SELECT * FROM conteudo
-					WHERE idDisciplina = :valId')
+					<?php foreach ($listaDisciplinas as $disciplina) { ?>
 
-?>
+						<li> <a href="index.php?disciplina=<?=$disciplina['id']?>"> <?= $disciplina['nome']?> </a> </li>
+					<?php } ?>
+				</ul>
 
-
-					<li><a href="index.php?disciplina=<?=$disciplina['id']?>">Matemática <?= $disciplina['nome']?></a></li>
-          <li><a href="materia/portugues.php">Português</a></li>
-          <li><a href="materia/fisica.php">Física</a></li>
-					<li><a href="materia/historia.php">História</a></li>
-          <li><a href="materia/geografia.php">Geografia</a></li>
-          <li><a href="materia/filosofia.php">Filosofia</a></li>
-					<li><a href="materia/sociologia.php">Sociologia</a></li>
-          <li><a href="materia/biologia.php">Biologia</a></li>
-          <li><a href="materia/ingles.php">Inglês</a></li>
-					<li><a href="materia/quimica.php">Química</a></li>
-					<li><a href="materia/desenho.php">Desenho</a></li>
-					<li><a href="materia/musica.php">Música/Arte</a></li>
-					<li><a href="materia/educacaofisica.php">Educação Física</a></li>
-					<li><a href="materia/lp.php">Linguagem de Programação</a></li>
-					<li><a href="materia/icc.php">Introdução a Ciência da Computação</a></li>
-					<li><a href="materia/bd.php">Banco de Dados</a></li>
-					<li><a href="materia/engenharia.php">Engenharia de Software</a></li>
-        </ul>
       </li>
 			<li><a class="nav-link" href="Controladores/sair.php">Sair</a></li>
 
@@ -171,14 +153,23 @@ background-color:  black;
 	$usuarioConectado = BuscaUsuarioPorEmail($email);
 	if($usuarioConectado['tipo'] == 2){
 ?>
-<form action="Controladores/upload.php" enctype="multipart/form-data" method="POST">
-<div id="upload">
-<b>Selecione o arquivo:</b> <input name="arquivo" size="20" type="file"/>
-<b>Insira o nome do arquivo:</b> <input name="nome" type="text"/>
-<input type="submit" value="Enviar" />
-</div>
+	<form action="Controladores/upload.php" enctype="multipart/form-data" method="POST" id="upload">
 
-</form>
+		<b>Selecione o arquivo:</b> <input name="arquivo" size="20" type="file"/>
+		<b>Insira o nome do arquivo:</b> <input name="nome" type="text"/><br>
+		<b>Selecione a matéria requerida</b> <select name="disciplina" form="upload">
+																					<?php foreach ($listaDisciplinas as $disciplina) { ?>
+																						<option value="<?=$disciplina['id']?>"><?= $disciplina['nome']?></option>
+																					<?php } ?>
+																			 	 </select>
+		<br><input type="submit" value="Enviar" />
+
+	</form>
+
+
+
+
+
 <?php } ?>
 
 </body>
@@ -208,7 +199,7 @@ background-color:  black;
 						<p><?= $p['nome']?></p>
 
 					</div>
-				
+
 <?php
 						if ($usuarioConectado['matricula'] == $p['matricula_professor']){ ?>
 						 <a href="Controladores/removeUpload.php?idConteudo=<?= $p['cod_conteudo'] ?>"> Remover</a> <?php } ?>
