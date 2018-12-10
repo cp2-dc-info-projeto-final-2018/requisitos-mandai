@@ -15,8 +15,8 @@ $erros = [];
 				'senha' => FILTER_DEFAULT,
 				'confirmaSenha' => FILTER_DEFAULT,
 				'matricula'=>FILTER_DEFAULT,
-				'tipo' => FILTER_DEFAULT,
-				'disciplina' => FILTER_DEFAULT
+				'tipo' => FILTER_VALIDATE_INT,
+				'disciplina' => FILTER_VALIDATE_INT
 			]
 		);
 

@@ -22,11 +22,11 @@ function insereUsuario($dadosNovoUsuario)
 	if($dadosNovoUsuario['tipo'] == 2)
 		{
 			$sql = $db -> prepare(
-				"INSERT INTO professor (matricula_professor, disciplina)
-					VALUES (:matricula_professor, :disciplina);");
+				"INSERT INTO professor (matricula_professor, idDisciplina)
+					VALUES (:matricula_professor, :idDisciplina);");
 
 					$sql -> bindValue(':matricula_professor', $dadosNovoUsuario['matricula']);
-					$sql -> bindValue(':disciplina', $dadosNovoUsuario['disciplina']);
+					$sql -> bindValue(':idDisciplina', $dadosNovoUsuario['disciplina']);
 					$sql -> execute();
 		}
 
@@ -36,7 +36,9 @@ function BuscaUsuarioPorEmail($email)
 {
 $bd = criaConexaoBD();
 
-$sql = $bd->prepare('SELECT nome, email, senha, matricula, tipo FROM cadastro WHERE email = :email');
+$sql = $bd->prepare('SELECT nome, email, senha, matricula, tipo, idDisciplina 
+	                   FROM cadastro LEFT JOIN professor ON cadastro.matricula = professor.matricula_professor
+										 WHERE email = :email');
 
 $sql->bindValue(':email', $email);
 

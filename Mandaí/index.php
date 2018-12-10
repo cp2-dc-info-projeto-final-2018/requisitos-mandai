@@ -16,7 +16,19 @@ $listaDisciplinas = buscaDisciplinas();
 		exit();
 	}
 
-	 // $fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+		$usuarioConectado = BuscaUsuarioPorEmail($email);
+		$matriculaUsuarioConectado = $usuarioConectado['matricula'];
+
+
+		if(array_key_exists('disciplina', $_REQUEST))
+		{
+			$publicacoes = buscaConteudoPorDisciplina($_REQUEST['disciplina']);
+		}
+
+		else
+		{
+			$publicacoes = BuscaPublicacao();
+		}
 ?>
 
 <!DOCTYPE HTML>
@@ -157,11 +169,7 @@ background-color:  black;
 
 		<b>Selecione o arquivo:</b> <input name="arquivo" size="20" type="file"/>
 		<b>Insira o nome do arquivo:</b> <input name="nome" type="text"/><br>
-		<b>Selecione a matéria requerida</b> <select name="disciplina" form="upload">
-																					<?php foreach ($listaDisciplinas as $disciplina) { ?>
-																						<option value="<?=$disciplina['id']?>"><?= $disciplina['nome']?></option>
-																					<?php } ?>
-																			 	 </select>
+		
 		<br><input type="submit" value="Enviar" />
 
 	</form>
@@ -178,17 +186,16 @@ background-color:  black;
 <div id="principal">
 	<?php
 
-				$usuarioConectado = BuscaUsuarioPorEmail($email);
-				$matriculaUsuarioConectado = $usuarioConectado['matricula'];
-				$publicacoes = BuscaPublicacao();
+
 
 				foreach ($publicacoes as $p)
 				{ ?>
 
 					<div id="publicacao">
-						<?php
-						$allowedTypes = array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
-						$detectedType = exif_imagetype($p['arquivo']);
+					<a href="<?= $p['arquivo']?>">
+							<?php
+						$allowedTypes = array('png', 'jpg', 'jpeg', 'gif');
+						$detectedType = pathinfo($p['arquivo'], PATHINFO_EXTENSION);
 
 						if (in_array($detectedType, $allowedTypes)){ ?>
 							<img src="<?= $p['arquivo']?>" height="60px" width="60px">
@@ -197,7 +204,7 @@ background-color:  black;
 						<?php } ?>
 
 						<p><?= $p['nome']?></p>
-
+					</a>
 					</div>
 
 <?php

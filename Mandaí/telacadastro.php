@@ -147,7 +147,7 @@ else {
                                         <div class="name">Disciplina</div>
                                         <div class="value">
                                             <div class="input-group">
-                                              <select name="disciplina" form="upload">
+                                              <select name="disciplina">
                                                       <?php foreach ($listaDisciplinas as $disciplina) { ?>
                                                       <option value="<?=$disciplina['id']?>"><?= $disciplina['nome']?></option>
                                                       <?php } ?>

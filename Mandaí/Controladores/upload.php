@@ -10,6 +10,7 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION))
 {
 	$usuarioConectado = BuscaUsuarioPorEmail($email);
 	$matriculaProfessor = $usuarioConectado['matricula'];
+	$disciplinaProfessor = $usuarioConectado['idDisciplina'];
 	/*validar se o usuario é professor */
 }
 else
@@ -20,8 +21,9 @@ else
 }
 
 $request = array_map('trim', $_REQUEST);
-$request = filter_var_array($request, [ 'nome' => FILTER_DEFAULT ]
-																			);
+$request = filter_var_array($request,
+																[ 'nome' => FILTER_DEFAULT ]
+														);
 
 $nome = $request['nome'];
 
@@ -61,7 +63,7 @@ if($nome == false)
 
 if ($erro == null)
 {
-	InsereConteudo($matriculaProfessor, $caminhoCompleto, $nome, $idDisciplina);
+	InsereConteudo( $matriculaProfessor, $caminhoCompleto, $disciplinaProfessor, $nome);
 	header('Location: ../index.php');
 	exit();
 }

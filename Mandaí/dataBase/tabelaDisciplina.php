@@ -13,17 +13,6 @@ function InsereDisciplina($dadosDisciplina)
 	$sql->execute();
 }
 
-function insereRegencia(string $matriculaProfessor, int $idDisciplina)
-{
-    $sql = $db -> prepare(
-      "INSERT INTO regencia (idProfessor, idDisciplina)
-        VALUES (:idProfessor, :idDisciplina);");
-
-        $sql -> bindValue(':idProfessor', $matriculaProfessor);
-        $sql -> bindValue(':idDisciplina', $idDisciplina);
-        $sql -> execute();
-}
-
 function buscaDisciplinas()
 {
 	$bd = criaConexaoBD();
@@ -32,7 +21,7 @@ function buscaDisciplinas()
 	$sql -> execute();
 
 	return $sql -> fetchAll();
-	
+
 }
 
 ?>

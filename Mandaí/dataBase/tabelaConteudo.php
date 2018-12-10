@@ -1,5 +1,7 @@
 <?php
 
+require_once('criaConexaoBD.php');
+
 function InsereConteudo(string $matriculaProfessor, string $arquivo, int $idDisciplina, string $nome)
 {
 	$bd = criaConexaoBD();
@@ -54,6 +56,19 @@ function RemovePublicacao($matriculaProfessor, $idConteudo){
 	$sql->bindValue(':cod_conteudo', $idConteudo);
 
 	$sql->execute();
+}
+
+function buscaConteudoPorDisciplina($idDisciplina)
+{
+	$bd = criaConexaoBD();
+
+	$sql = $bd->prepare('SELECT nome, arquivo, matricula_professor, cod_conteudo, idDisciplina FROM conteudo WHERE idDisciplina = :idDisciplina');
+
+	$sql->bindValue(':idDisciplina', $idDisciplina);
+
+	$sql->execute();
+
+	return $sql->fetchAll();
 }
 
 ?>
