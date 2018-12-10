@@ -152,6 +152,15 @@ else {
                             </div>
                         </div>
 
+                        <div class="form-row">
+                                        <div class="name">Disciplina</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="disciplina">
+                                            </div>
+                                        </div>
+                                    </div>
+
 												<div class="form-row">
                             <div class="name">Matrícula</div>
                             <div class="value">

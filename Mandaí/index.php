@@ -72,6 +72,19 @@ background-color: #cbdce2;
 	left: 43%;
 }
 
+#upload{
+	position: relative;
+	margin-left: 70px;
+}
+
+#publicacao{
+	position: relative;
+	border: 1px solid red;
+	margin: 20px;
+	height: 100px;
+
+}
+
 .feedPrincipal {
 width: 300px;
 height: 300px;
@@ -120,14 +133,13 @@ background-color:  black;
 
 				<ul class="dropdown-menu">
 
-					<?php
-						$array = array (
-							'1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9', '10', '11', '12', '13', '14', '15', '16', '17'
-						);
-						foreach ($array as $disciplina) {
-							 echo $disciplina;
-						}
-					?>
+<?php
+					$db = criaConexaoBD();
+				$sql = $bd -> prepare =	('SELECT * FROM conteudo
+					WHERE idDisciplina = :valId')
+
+?>
+
 
 					<li><a href="index.php?disciplina=<?=$disciplina['id']?>">Matemática <?= $disciplina['nome']?></a></li>
           <li><a href="materia/portugues.php">Português</a></li>
@@ -160,10 +172,11 @@ background-color:  black;
 	if($usuarioConectado['tipo'] == 2){
 ?>
 <form action="Controladores/upload.php" enctype="multipart/form-data" method="POST">
-
-<b>Selecione o aquirvo:</b> <input name="arquivo" size="20" type="file"/>
-<b>Insira o nome do aquirvo:</b> <input name="nome" type="text"/>
+<div id="upload">
+<b>Selecione o arquivo:</b> <input name="arquivo" size="20" type="file"/>
+<b>Insira o nome do arquivo:</b> <input name="nome" type="text"/>
 <input type="submit" value="Enviar" />
+</div>
 
 </form>
 <?php } ?>
@@ -180,22 +193,32 @@ background-color:  black;
 
 				foreach ($publicacoes as $p)
 				{ ?>
-					<img src="<?= $p['arquivo']?>">
-					<p><?= $p['nome']?></p>
 
-					<?php
-					if ($usuarioConectado['matricula'] == $p['matricula_professor'])
-						{ ?> <a href="Controladores/removeUpload.php?idConteudo=<?= $p['cod_conteudo'] ?>"> Remover</a> <?php } ?>
+					<div id="publicacao">
+						<?php
+						$allowedTypes = array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
+						$detectedType = exif_imagetype($p['arquivo']);
 
+						if (in_array($detectedType, $allowedTypes)){ ?>
+							<img src="<?= $p['arquivo']?>" height="60px" width="60px">
+						<?php } else{ ?>
+							<img src="pdf.png" height="60px" width="60px">
+						<?php } ?>
 
-	 <?php } ?>
+						<p><?= $p['nome']?></p>
 
-</div>
+					</div>
+				
+<?php
+						if ($usuarioConectado['matricula'] == $p['matricula_professor']){ ?>
+						 <a href="Controladores/removeUpload.php?idConteudo=<?= $p['cod_conteudo'] ?>"> Remover</a> <?php } ?>
 
-<footer id="rodape">
+<?php } ?>
+
+<!--<footer id="rodape">
 	<p id="textorodape"> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...<article> </p>
 </footer>
-
+-->
 </body>
 
 

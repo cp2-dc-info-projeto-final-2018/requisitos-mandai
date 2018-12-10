@@ -19,7 +19,8 @@ $erros = [];
 				'matricula'=>FILTER_DEFAULT,
 				'cidade' => FILTER_DEFAULT,
 				'estado' => FILTER_DEFAULT,
-				'tipo' => FILTER_DEFAULT
+				'tipo' => FILTER_DEFAULT,
+				'disciplina' => FILTER_DEFAULT
 			]
 		);
 
@@ -33,6 +34,7 @@ $erros = [];
 		$estado = $validar ['estado'];
 		$tipo = $validar['tipo'];
 		$cpf = $validar['cpf'];
+		$disciplina = $validar['disciplina'];
 
 	//nome
 		$nome = $validar['nome'];
@@ -124,6 +126,16 @@ $tipo = $validar['tipo'];
 if ($tipo == false)
 {
 	$erros[] = "Selecione a opção";
+}
+
+//disciplina
+if ($tipo == 1)
+{
+	$disciplina = null;
+}
+else if ($tipo == 2)
+{
+	$disciplina = $validar['disciplina'];
 }
 
 //matricula

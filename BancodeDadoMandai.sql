@@ -19,8 +19,8 @@ FOREIGN KEY(matricula_professor) REFERENCES cadastro(matricula)
 );
 
 CREATE TABLE disciplina
-id INT NOT NULL,
-nome VARCHAR (50) NOT NULL,
+(id INT AUTO_INCREMENT NOT NULL,
+nome VARCHAR (20) NOT NULL UNIQUE,
 PRIMARY KEY (id)
 );
 
@@ -29,8 +29,17 @@ cod_conteudo INT AUTO_INCREMENT NOT NULL,
 nome VARCHAR(50) NOT NULL,
 arquivo VARCHAR(100) NOT NULL,
 matricula_professor VARCHAR(9) NOT NULL,
-mat_professor INT NOT NULL,
 idDisciplina INT NOT NULL,
 PRIMARY KEY(cod_conteudo),
-FOREIGN KEY(matricula_professor) REFERENCES professor(matricula_professor)
+FOREIGN KEY(matricula_professor) REFERENCES professor(matricula_professor),
+FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
 );
+
+CREATE TABLE regencia(
+idProfessor VARCHAR(9) NOT NULL,
+idDisciplina INT NOT NULL,
+PRIMARY KEY (idProfessor, idDisciplina),
+FOREIGN KEY(idProfessor) REFERENCES professor(matricula_professor),
+FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
+);
+
