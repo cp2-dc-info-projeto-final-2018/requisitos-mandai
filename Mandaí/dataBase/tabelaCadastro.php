@@ -8,7 +8,7 @@ function insereUsuario($dadosNovoUsuario)
 
 
 	$sql = $db->prepare(
-	"INSERT INTO cadastro (nome, email, senha, cpf, matricula, tipo)
+	"INSERT INTO cadastro (nome, email, senha, matricula, tipo)
 	VALUES (:nome, :email, :senha, :matricula, :tipo);");
 
 	$sql->bindValue(':nome', $dadosNovoUsuario['nome']);
@@ -22,10 +22,11 @@ function insereUsuario($dadosNovoUsuario)
 	if($dadosNovoUsuario['tipo'] == 2)
 		{
 			$sql = $db -> prepare(
-				"INSERT INTO professor (matricula_professor)
-					VALUES (:matricula_professor);");
+				"INSERT INTO professor (matricula_professor, disciplina)
+					VALUES (:matricula_professor, :disciplina);");
 
 					$sql -> bindValue(':matricula_professor', $dadosNovoUsuario['matricula']);
+					$sql -> bindValue(':disciplina', $dadosNovoUsuario['disciplina']);
 					$sql -> execute();
 		}
 

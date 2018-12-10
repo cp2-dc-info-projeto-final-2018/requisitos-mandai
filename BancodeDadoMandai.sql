@@ -9,8 +9,10 @@ PRIMARY KEY(matricula)
 
 CREATE TABLE professor(
 matricula_professor VARCHAR(9) NOT NULL,
+idDisciplina INT NOT NULL,
 PRIMARY KEY(matricula_professor),
 FOREIGN KEY(matricula_professor) REFERENCES cadastro(matricula)
+FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
 );
 
 CREATE TABLE disciplina

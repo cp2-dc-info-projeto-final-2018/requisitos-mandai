@@ -42,6 +42,26 @@ else {
 
     <!-- Main CSS-->
     <link href="css1/main.css" rel="stylesheet" media="all">
+
+    <style>
+      #disciplina{
+        visibility: hidden;
+      }
+    </style>
+    <script>
+      function tipoUsuarioSelecionado(radio){
+        if (radio.value == 2)
+        {
+          var visibilidade = "visible";
+        }
+        else
+        {
+          var visibilidade = "hidden";
+        }
+
+        document.getElementById("disciplina").style.visibility = visibilidade;
+      }
+    </script>
 </head>
 
 
@@ -102,7 +122,7 @@ else {
                                         </div>
                                     </div>
 
-                              
+
 
 
 
@@ -112,8 +132,8 @@ else {
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
 
-                                            <input class="buttonn" name="tipo" type="radio" value="1"> Sou Aluno<br>
-                                            <input class="buttonn" name="tipo" type="radio" value="2"> Sou Professor<br>
+                                            <input class="buttonn" name="tipo" type="radio" value="1" onchange="tipoUsuarioSelecionado(this)"> Sou Aluno<br>
+                                            <input class="buttonn" name="tipo" type="radio" value="2" onchange="tipoUsuarioSelecionado(this)"> Sou Professor<br>
 
 
                                         </select>
@@ -123,7 +143,7 @@ else {
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div id="disciplina" class="form-row">
                                         <div class="name">Disciplina</div>
                                         <div class="value">
                                             <div class="input-group">
