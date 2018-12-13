@@ -32,11 +32,4 @@ FOREIGN KEY(matricula_professor) REFERENCES professor(matricula_professor),
 FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
 );
 
-CREATE TABLE regencia(
-idProfessor VARCHAR(9) NOT NULL,
-idDisciplina INT NOT NULL,
-PRIMARY KEY (idProfessor, idDisciplina),
-FOREIGN KEY(idProfessor) REFERENCES professor(matricula_professor),
-FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
-);
 
