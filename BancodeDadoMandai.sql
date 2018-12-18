@@ -33,3 +33,7 @@ FOREIGN KEY(idDisciplina) REFERENCES disciplina(id)
 );
 
 
+insert into disciplina (nome) values
+('matemática'),
+('português');
+
