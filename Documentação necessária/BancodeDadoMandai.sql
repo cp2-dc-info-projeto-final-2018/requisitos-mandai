@@ -12,6 +12,12 @@ tipo INT NOT NULL,
 PRIMARY KEY(matricula)
 );
 
+CREATE TABLE disciplina(
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(50) NOT NULL UNIQUE,
+  PRIMARY KEY(id)
+);
+
 CREATE TABLE aluno(
 matricula_aluno VARCHAR(9) NOT NULL,
 PRIMARY KEY(matricula_aluno),
