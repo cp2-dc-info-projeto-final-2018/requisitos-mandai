@@ -51,3 +51,8 @@ https://cdn.discordapp.com/attachments/449946088602861568/514501034228449281/unk
 https://cdn.discordapp.com/attachments/449946088602861568/514501074514608158/unknown.png
 
 -Após o cadastro e o login ser efetuado, o acesso ao site é liberado.
+-Na tela principal temos um feed onde se localizam os principais conteúdos
+https://cdn.discordapp.com/attachments/397800482367733760/524740848269787156/unknown.png
+
+-Caso o usuario for um professor, ele poderá fazer enviar materiais ao site. Através da funcionalidade de upload de arquivos.
+https://cdn.discordapp.com/attachments/397800482367733760/524740963369746433/unknown.png
